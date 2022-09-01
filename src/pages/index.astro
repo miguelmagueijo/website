@@ -1,0 +1,255 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icons from "../Svgs/";
+---
+
+<Layout title="Home @ Miguel Magueijo">
+	<main>
+		<section class="my-5">
+			<img src="/me.png" class="rounded-full img bg-gradient-to-r from-primary2 to-secondary2 p-1">
+			<h1 class="mt-2 text-2xl font-bold text-left text-primary2">Miguel Magueijo</h1>
+			<h2 class="text-xl text-right text-secondary2">Estudante & Desenvolvedor</h2>
+			<p class="mt-8 text-sm">
+				Olá 👋 sou o Miguel Magueijo, sou Português 🇵🇹 e tenho 21 anos.
+				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+			</p>
+		</section>
+		<section class="my-10">
+			<div class="flex space-x-2 items-center">
+				<Icons.StudentCap class="fill-primary2" width="25px" />
+				<h2 class="text-xl font-bold text-gradient">Educação</h2>
+			</div>
+			<hr class="line-gradient mb-4">
+			<ul class="space-y-4">
+				<li class="grid grid-cols-5 gap-4">
+					<img class="support-dark" src="https://www.ipcb.pt/sites/default/files/ipcb_estcb.svg" alt="IPCB Escola Superior de Tecnologias Logo" title="IPCB Escola Superior de Tecnologias">
+					<div class="text-sm col-span-4">
+						<p class="font-bold">Instituto Politécnico de Castelo Branco</p>
+						<p class="font-semibold">Licenciatura em Informática e Multimédia</p>
+						<p>Sep 2021 - Jul 2024</p>
+					</div>
+				</li>
+				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<li class="grid grid-cols-5 gap-4">
+					<img class="support-dark" src="https://www.ipcb.pt/sites/default/files/ipcb_estcb.svg" alt="IPCB Escola Superior de Tecnologias Logo" title="IPCB Escola Superior de Tecnologias">
+					<div class="text-sm col-span-4">
+						<p class="font-bold">Instituto Politécnico de Castelo Branco</p>
+						<p class="font-semibold">Técnico Superior Profissional em Tecnologias e Programação de Sistemas de Informação</p>
+						<p>Sep 2019 - Jul 2021</p>
+						<p>Média: 18 de 20</p>
+					</div>
+				</li>
+				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<li class="grid grid-cols-5 gap-4">
+					<img class="support-dark" src="/3rdParty/AEF.png" alt="Agrupamento de Escolas do Fundão Logo" title="Agrupamento de Escolas do Fundão">
+					<div class="text-sm col-span-4">
+						<p class="font-bold">Agrupamento de Escolas do Fundão</p>
+						<p class="font-semibold">Curso Profissional de Gestão e Programação de Sistemas Informáticos</p>
+						<p>Sep 2016 - Jul 2019</p>
+						<p>Média: 17 de 20</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="my-10">
+			<div class="flex space-x-2 items-center">
+				<Icons.Briefcase class="fill-primary2" width="25px" />
+				<h2 class="text-xl font-bold text-gradient">Experiência de trabalho</h2>
+			</div>
+			<hr class="line-gradient mb-4">
+			<ul class="space-y-4">
+				<li class="grid grid-cols-5 gap-4">
+					<img src="https://www.engineetech365.com/wp-content/uploads/2020/03/capgemini-logo-1024x1024.jpg" alt="Capgemini Engineering Logo" title="Capgemini Engineering">
+					<div class="text-sm col-span-4">
+						<p class="font-bold">Capgemini Engineering</p>
+						<p class="font-semibold">Curricular intership - Full-stack web developer</p>
+						<p>Mar 2021 - Jul 2021</p>
+					</div>
+				</li>
+				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<li class="grid grid-cols-5 gap-4">
+					<img class="support-dark" src="/3rdParty/CommunitiesComunicacoes.png" alt="Communities - Comunicações, Lda Logo" title="Communities - Comunicações, Lda">
+					<div class="text-sm col-span-4">
+						<p class="font-bold">Communities - Comunicações, Lda</p>
+						<p class="font-semibold">Curricular intership - Full-stack web developer</p>
+						<p>May 2018 - Jun 2018</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="my-10">
+			<div class="flex space-x-2 items-center">
+				<Icons.ConceptBulb class="fill-primary2" width="25px" />
+				<h2 class="text-xl font-bold text-gradient">Projetos</h2>
+			</div>
+			<hr class="line-gradient mb-4">
+			<ul class="space-y-4">
+				<li class="grid grid-cols-5 gap-4">
+					<img class="support-dark"class="support-dark" src="/Projects/reallearn.svg" alt="Real Learn Logo" title="Real Learn">
+					<div class="text-sm col-span-4">
+						<p class="font-bold">Real Learn</p>
+						<p class="font-semibold">School project that clones moodle (prototype)</p>
+						<p>Made in 2021</p>
+					</div>
+				</li>
+				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<li class="grid grid-cols-5 gap-4">
+					<img class="support-dark" src="/Projects/popcornlist.png" alt="PopCornList Logo" title="PopCornList">
+					<div class="text-sm col-span-4">
+						<p class="font-bold">PopCornList</p>
+						<p class="font-semibold">School project to track your movies and TV Shows status (prototype)</p>
+						<p>Made in 2020</p>
+					</div>
+				</li>
+				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<li class="grid grid-cols-5 gap-4">
+					<img class="support-dark" src="/Projects/projectmanager.png" alt="Project Manager Logo" title="Project Manager">
+					<div class="text-sm col-span-4">
+						<p class="font-bold">Projects Manager</p>
+						<p class="font-semibold">Final course project to manage projects</p>
+						<p>Made in 2019</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="my-10">
+			<div class="flex space-x-2 items-center">
+				<Icons.EmbedCode class="fill-primary2" width="25px" />
+				<h2 class="text-xl font-bold text-gradient">Linguagens de programação</h2>
+			</div>
+			<hr class="line-gradient mb-4">
+			<div class="grid grid-cols-5 gap-4 items-center programming-languages-imgs">
+				<img class="bg-white" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" alt="Java Logo" title="Java" />
+				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" title="Python" />
+				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Javascript Logo" title="Javascript" />
+				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP Logo" title="PHP" />
+				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" title="HTML5" />
+				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo" title="CSS" />
+				<img class="bg-white" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL Logo" title="MySQL" />
+				<img class="bg-white" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" alt="Microsoft SQL Server Logo" title="Microsoft SQL Server" />
+			</div>
+		</section>
+		<section class="my-10 p-1 bg-gradient-to-r from-primary2 to-secondary2 rounded">
+			<div class="bg-blackMaterial p-2">
+				<div class="flex justify-between items-center text-xl font-bold text-gradient">
+					<h2 class="col-span-8">Outros</h2>
+					<button id="otherBtn" class="plus-btn">
+						<span class="plus-btn-vertical"></span>
+						<span class="plus-btn-horizontal"></span>
+					</button>
+				</div>
+				<div id="otherContent" class="other-hidden collapsed">
+					<h3 class="mt-5 font-bold">Areas of interest</h3>
+					<ul class="list-disc list-inside">
+						<li>Gaming</li>
+						<li>Fantasy Stories/Worlds</li>
+						<li>Artificial Intelligence</li>
+						<li>Databases</li>
+					</ul>
+					<h3 class="mt-5 font-bold">I want to learn</h3>
+					<ul class="list-disc list-inside">
+						<li>Game Development (Godot/Unreal)</li>
+						<li>C++</li>
+						<li>Data Analysis</li>
+						<li>Artificial Intelligence</li>
+					</ul>
+					<h3 class="mt-5 font-bold">Technologies I've been using/trying</h3>
+					<ul class="list-disc list-inside">
+						<li>Tailwind CSS</li>
+						<li>Astro JS</li>
+						<li>Svelte</li>
+						<small>Fun fact: this website is made with Astro & Tailwind</small>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<script is:inline>
+	const otherBtn = document.getElementById("otherBtn");
+	const otherContent = document.getElementById("otherContent");
+		
+	if (!otherBtn || !otherContent) {
+		throw new Error("Cannot find \"Other\" button or content");
+	}
+		
+	otherBtn.addEventListener("click", () => {
+		otherContent.classList.toggle("collapsed");
+		otherBtn.classList.toggle("active");
+	});
+</script>
+
+<style>
+	.other-hidden {
+		overflow:hidden;
+		height: auto;
+		transform: scaleY(1);
+		transition: all 300ms;
+		-webkit-transition: all 300ms;
+		transform-origin: top;
+		max-height: 100vh;
+	}
+
+	.other-hidden.collapsed {
+		transform: scaleY(0);
+		max-height: 0;
+	}
+
+	img {
+		@apply rounded;
+	}
+
+	img.support-dark {
+		@apply bg-white p-1;
+	}
+
+	.programming-languages-imgs img {
+		@apply p-1;
+	}
+
+	.img {
+		width: 35vw;
+		border: 5px solid black;
+		margin: auto;
+	}
+
+	.plus-btn {
+		position: relative;
+		width: 20px;
+		height: 20px;
+		right: 0;
+	}
+
+	.plus-btn span {
+		@apply rounded bg-gradient-to-r from-primary2 to-secondary2;
+		position: absolute;
+		transition: 300ms;
+	}
+
+	.plus-btn-vertical {
+		height: 20%;
+		width: 100%;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0%;
+		right: 0;
+	}
+
+	.plus-btn-horizontal {
+		height: 100%;
+		width: 20%;
+		top: 0%;
+		transform: translateX(-50%);
+		left: 50%;
+		right: 0;
+	}
+
+	.plus-btn.active span {
+		transform: rotate(90deg);
+	}
+
+	.plus-btn.active .plus-btn-vertical {
+		opacity: 0;
+	}
+</style>
