@@ -2,10 +2,12 @@
 
 ---
 <nav class="bg-gradient-a dark:bg-dark-gradient-a">
-    <ul>
+    <ul class="flex justify-between items-center">
         <li>
-            <a class="underline" href="/">Home</a>
-            <span id="themeBtn" class="float-right"></span>
+            <a class="underline navbar-btn" href="/">Home</a>
+        </li>
+        <li>
+            <span id="themeBtn"></span>
         </li>
     </ul>
 </nav>
@@ -33,10 +35,16 @@
 
 <style>
     nav {
-        @apply w-full rounded top-4 p-4 text-white font-bold z-50;
+        @apply w-full rounded top-4 p-4 font-bold z-50;
         position: sticky;
         overflow: hidden;
         backdrop-filter: blur(1px);
+    }
+
+    .navbar-btn {
+        @apply px-2 py-1 rounded font-bold bg-white;
+        mix-blend-mode:screen;
+        color: black;
     }
 
     #themeBtn {
