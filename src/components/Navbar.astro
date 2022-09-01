@@ -11,8 +11,13 @@
 </nav>
 
 <script is:inline>
+    if (document.documentElement.classList.contains("dark")) {
+        document.getElementById("themeBtn").classList.add("active");
+    }
+
     document.getElementById("themeBtn")?.addEventListener("click", (event) => {
         document.documentElement.classList.toggle("dark");
+        localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
 
         event.target.classList.add("animation");
 
