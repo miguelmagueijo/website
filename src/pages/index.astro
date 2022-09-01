@@ -6,9 +6,9 @@ import Icons from "../Svgs/";
 <Layout title="Home @ Miguel Magueijo">
 	<main>
 		<section class="my-5">
-			<img src="/me.png" class="rounded-full img bg-gradient-to-r from-primary2 to-secondary2 p-1">
-			<h1 class="mt-2 text-2xl font-bold text-left text-primary2">Miguel Magueijo</h1>
-			<h2 class="text-xl text-right text-secondary2">Estudante & Desenvolvedor</h2>
+			<img src="/me.png" class="rounded-full img bg-gradient dark:bg-dark-gradient p-1">
+			<h1 class="mt-2 text-2xl font-bold text-left text-primary dark:text-darkPrimary">Miguel Magueijo</h1>
+			<h2 class="text-xl text-right text-secondary dark:text-darkSecondary">Estudante & Desenvolvedor</h2>
 			<p class="mt-8 text-sm">
 				Olá 👋 sou o Miguel Magueijo, sou Português 🇵🇹 e tenho 21 anos.
 				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
@@ -16,10 +16,10 @@ import Icons from "../Svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.StudentCap class="fill-primary2" width="25px" />
-				<h2 class="text-xl font-bold text-gradient">Educação</h2>
+				<Icons.StudentCap class="fill-primary dark:fill-darkPrimary" width="25px" />
+				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient">Educação</h2>
 			</div>
-			<hr class="line-gradient mb-4">
+			<hr class="line-gradient dark:line-dark-gradient mb-4">
 			<ul class="space-y-4">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark" src="https://www.ipcb.pt/sites/default/files/ipcb_estcb.svg" alt="IPCB Escola Superior de Tecnologias Logo" title="IPCB Escola Superior de Tecnologias">
@@ -53,10 +53,10 @@ import Icons from "../Svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.Briefcase class="fill-primary2" width="25px" />
-				<h2 class="text-xl font-bold text-gradient">Experiência de trabalho</h2>
+				<Icons.Briefcase class="fill-primary dark:fill-darkPrimary" width="25px" />
+				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient">Experiência de trabalho</h2>
 			</div>
-			<hr class="line-gradient mb-4">
+			<hr class="line-gradient dark:line-dark-gradient mb-4">
 			<ul class="space-y-4">
 				<li class="grid grid-cols-5 gap-4">
 					<img src="https://www.engineetech365.com/wp-content/uploads/2020/03/capgemini-logo-1024x1024.jpg" alt="Capgemini Engineering Logo" title="Capgemini Engineering">
@@ -79,10 +79,10 @@ import Icons from "../Svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.ConceptBulb class="fill-primary2" width="25px" />
-				<h2 class="text-xl font-bold text-gradient">Projetos</h2>
+				<Icons.ConceptBulb class="fill-primary dark:fill-darkPrimary" width="25px" />
+				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient">Projetos</h2>
 			</div>
-			<hr class="line-gradient mb-4">
+			<hr class="line-gradient dark:line-dark-gradient mb-4">
 			<ul class="space-y-4">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark"class="support-dark" src="/Projects/reallearn.svg" alt="Real Learn Logo" title="Real Learn">
@@ -114,10 +114,10 @@ import Icons from "../Svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.EmbedCode class="fill-primary2" width="25px" />
-				<h2 class="text-xl font-bold text-gradient">Linguagens de programação</h2>
+				<Icons.EmbedCode class="fill-primary dark:fill-darkPrimary" width="25px" />
+				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient">Linguagens de programação</h2>
 			</div>
-			<hr class="line-gradient mb-4">
+			<hr class="line-gradient dark:line-dark-gradient mb-4">
 			<div class="grid grid-cols-5 gap-4 items-center programming-languages-imgs">
 				<img class="bg-white" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" alt="Java Logo" title="Java" />
 				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" title="Python" />
@@ -129,13 +129,13 @@ import Icons from "../Svgs/";
 				<img class="bg-white" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg" alt="Microsoft SQL Server Logo" title="Microsoft SQL Server" />
 			</div>
 		</section>
-		<section class="my-10 p-1 bg-gradient-to-r from-primary2 to-secondary2 rounded">
-			<div class="bg-blackMaterial p-2">
-				<div class="flex justify-between items-center text-xl font-bold text-gradient">
-					<h2 class="col-span-8">Outros</h2>
+		<section class="my-10 p-1 bg-gradient dark:bg-dark-gradient rounded">
+			<div class="bg-white dark:bg-black p-2">
+				<div class="flex justify-between items-center">
+					<h2 class="col-span-8 text-xl font-bold text-gradient dark:text-dark-gradient">Outros</h2>
 					<button id="otherBtn" class="plus-btn">
-						<span class="plus-btn-vertical"></span>
-						<span class="plus-btn-horizontal"></span>
+						<span class="plus-btn-vertical bg-gradient dark:bg-dark-gradient"></span>
+						<span class="plus-btn-horizontal bg-gradient dark:bg-dark-gradient"></span>
 					</button>
 				</div>
 				<div id="otherContent" class="other-hidden collapsed">
@@ -210,7 +210,6 @@ import Icons from "../Svgs/";
 
 	.img {
 		width: 35vw;
-		border: 5px solid black;
 		margin: auto;
 	}
 
@@ -222,7 +221,7 @@ import Icons from "../Svgs/";
 	}
 
 	.plus-btn span {
-		@apply rounded bg-gradient-to-r from-primary2 to-secondary2;
+		@apply rounded;
 		position: absolute;
 		transition: 300ms;
 	}

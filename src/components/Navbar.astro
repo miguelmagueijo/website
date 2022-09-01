@@ -1,20 +1,60 @@
 ---
 
 ---
-<nav>
+<nav class="bg-gradient-a dark:bg-dark-gradient-a">
     <ul>
         <li>
             <a class="underline" href="/">Home</a>
+            <span id="themeBtn" class="float-right"></span>
         </li>
     </ul>
 </nav>
 
+<script is:inline>
+    document.getElementById("themeBtn")?.addEventListener("click", (event) => {
+        document.documentElement.classList.toggle("dark");
+
+        event.target.classList.add("animation");
+
+        setTimeout(() => {
+            event.target.classList.toggle("active");
+        }, 150);
+
+        setTimeout(() => {
+            event.target.classList.remove("animation");
+        }, 300);
+    });
+</script>
+
 <style>
     nav {
-        @apply w-full rounded top-4 p-4 text-white font-bold bg-gradient-to-r from-primary2r to-secondary2r;
+        @apply w-full rounded top-4 p-4 text-white font-bold z-50;
         position: sticky;
         overflow: hidden;
-        /* background: rgba(0, 0, 0, 0.6); */
         backdrop-filter: blur(1px);
+    }
+
+    #themeBtn {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #themeBtn::before {
+        content: '☀️';
+    }
+
+    #themeBtn.active::before {
+        content: '🌒';
+    }
+
+    @keyframes Theme {
+        0%   { transform: scale(1) rotate(0deg); }
+        50%  { transform: scale(0) rotate(90deg); }
+        100% { transform: scale(1) rotate(0deg); }
+    }
+
+    #themeBtn.animation {
+        animation: Theme 300ms linear infinite;
+        transform-origin: center;
     }
 </style>
