@@ -9,6 +9,14 @@
     font-family: Catamaran, Arial, sans-serif;
 }
 
+details summary {
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
 @layer components {
     .bg-gradient {
         @apply bg-gradient-to-r from-primary to-secondary;
