@@ -6,44 +6,48 @@ import Icons from "../svgs/";
 <Layout title="Home | Miguel Magueijo">
 	<main>
 		<section class="my-5">
-			<img src="/me.png" class="rounded-full img bg-gradient dark:bg-dark-gradient p-1">
-			<h1 class="mt-2 text-2xl font-bold text-left text-primary dark:text-darkPrimary">Miguel Magueijo</h1>
-			<h2 class="text-xl text-right text-secondary dark:text-darkSecondary">Student & Developer</h2>
-			<p class="mt-8 text-sm">
+			<div class="md:grid md:grid-cols-2 md:items-center">
+				<img src="/me.png" class="rounded-full img bg-gradient dark:bg-dark-gradient p-1 md:width-full">
+				<div>
+					<h1 class="mt-2 text-2xl font-bold text-left text-primary dark:text-darkPrimary sm:text-center md:text-5xl">Miguel Magueijo</h1>
+					<h2 class="text-xl text-right text-secondary dark:text-darkSecondary sm:text-center md:text-4xl">Student & Developer</h2>
+				</div>
+			</div>
+			<p class="mt-8 text-sm md:text-lg">
 				Hi 👋 I'm Miguel Magueijo, I'm Portuguese 🇵🇹 and have 21 years old.
 				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
 			</p>
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.StudentCap class="fill-primary dark:fill-darkPrimary" width="25px" />
-				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient">Education</h2>
+				<Icons.StudentCap class="fill-primary dark:fill-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Education</h2>
 			</div>
 			<hr class="line-gradient dark:line-dark-gradient mb-4">
-			<ul class="space-y-4">
+			<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark" src="https://www.ipcb.pt/sites/default/files/ipcb_estcb.svg" alt="IPCB Escola Superior de Tecnologias Logo" title="IPCB Escola Superior de Tecnologias">
 					<div class="text-sm col-span-4">
 						<p class="font-semibold">Instituto Politécnico de Castelo Branco</p>
-						<p class="font-bold text-base">Bachelor in Informatics and Multimedia</p>
+						<p class="font-bold text-base md:text-lg">Bachelor in Informatics and Multimedia</p>
 						<p>Sep 2021 - Jul 2024</p>
 					</div>
 				</li>
-				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<hr class="bg-[#444444] border-none h-0.5 rounded sm:hidden">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark" src="https://www.ipcb.pt/sites/default/files/ipcb_estcb.svg" alt="IPCB Escola Superior de Tecnologias Logo" title="IPCB Escola Superior de Tecnologias">
 					<div class="text-sm col-span-4">
 						<p class="font-semibold">Instituto Politécnico de Castelo Branco</p>
-						<p class="font-bold text-base">Higher Professional Technical in Technologies and Information Systems Programming</p>
+						<p class="font-bold text-base md:text-lg">Higher Professional Technical in Technologies and Information Systems Programming</p>
 						<p>Sep 2019 - Jul 2021</p>
 					</div>
 				</li>
-				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<hr class="bg-[#444444] border-none h-0.5 rounded sm:hidden">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark" src="/3rdParty/AEF.png" alt="Agrupamento de Escolas do Fundão Logo" title="Agrupamento de Escolas do Fundão">
 					<div class="text-sm col-span-4">
 						<p class="font-semibold">Agrupamento de Escolas do Fundão</p>
-						<p class="font-bold text-base">Professional Course in Management and Programming of Information Systems</p>
+						<p class="font-bold text-base md:text-lg">Professional Course in Management and Programming of Information Systems</p>
 						<p>Sep 2016 - Jul 2019</p>
 					</div>
 				</li>
@@ -51,25 +55,25 @@ import Icons from "../svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.Briefcase class="fill-primary dark:fill-darkPrimary" width="25px" />
-				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient">Work experience</h2>
+				<Icons.Briefcase class="fill-primary dark:fill-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Work experience</h2>
 			</div>
 			<hr class="line-gradient dark:line-dark-gradient mb-4">
-			<ul class="space-y-4">
+			<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 				<li class="grid grid-cols-5 gap-4">
 					<img src="https://www.engineetech365.com/wp-content/uploads/2020/03/capgemini-logo-1024x1024.jpg" alt="Capgemini Engineering Logo" title="Capgemini Engineering">
 					<div class="text-sm col-span-4">
 						<p class="font-semibold">Capgemini Engineering</p>
-						<p class="font-bold text-base">Curricular intership - Full-stack Web Developer</p>
+						<p class="font-bold text-base md:text-lg">Curricular intership - Full-stack Web Developer</p>
 						<p>Mar 2021 - Jul 2021</p>
 					</div>
 				</li>
-				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<hr class="bg-[#444444] border-none h-0.5 rounded sm:hidden">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark" src="/3rdParty/CommunitiesComunicacoes.png" alt="Communities - Comunicações, Lda Logo" title="Communities - Comunicações, Lda">
 					<div class="text-sm col-span-4">
 						<p class="font-semibold">Communities - Comunicações, Lda</p>
-						<p class="font-bold text-base">Curricular intership - Full-stack Web Developer</p>
+						<p class="font-bold text-base md:text-lg">Curricular intership - Full-stack Web Developer</p>
 						<p>May 2018 - Jun 2018</p>
 					</div>
 				</li>
@@ -77,16 +81,16 @@ import Icons from "../svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.ConceptBulb class="fill-primary dark:fill-darkPrimary" width="25px" />
-				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient">Projects</h2>
+				<Icons.ConceptBulb class="fill-primary dark:fill-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Projects</h2>
 			</div>
 			<hr class="line-gradient dark:line-dark-gradient mb-4">
-			<ul class="space-y-4">
+			<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark"class="support-dark" src="/Projects/reallearn.svg" alt="Real Learn Logo" title="Real Learn">
 					<div class="text-sm col-span-4">
 						<div class="flex space-x-2 items-center">
-							<span class="font-bold text-base">Real Learn</span>
+							<span class="font-bold text-base md:text-lg">Real Learn</span>
 							<a href="https://github.com/miguelmagueijo/Real-Learn" target="_blank" rel="noopener noreferrer">
 								<Icons.Github width="20px" class="fill-black dark:fill-white" />
 							</a>
@@ -95,12 +99,12 @@ import Icons from "../svgs/";
 						<p>Made in 2021</p>
 					</div>
 				</li>
-				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<hr class="bg-[#444444] border-none h-0.5 rounded sm:hidden">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark" src="/Projects/popcornlist.png" alt="PopCornList Logo" title="PopCornList">
 					<div class="text-sm col-span-4">
 						<div class="flex space-x-2 items-center">
-							<span class="font-bold text-base">PopCornList</span>
+							<span class="font-bold text-base md:text-lg">PopCornList</span>
 							<a href="https://github.com/miguelmagueijo/DW-PopCornList" target="_blank" rel="noopener noreferrer">
 								<Icons.Github width="20px" class="fill-black dark:fill-white" />
 							</a>
@@ -109,12 +113,12 @@ import Icons from "../svgs/";
 						<p>Made in 2020</p>
 					</div>
 				</li>
-				<hr class="bg-[#444444] border-none h-0.5 rounded">
+				<hr class="bg-[#444444] border-none h-0.5 rounded sm:hidden">
 				<li class="grid grid-cols-5 gap-4">
 					<img class="support-dark" src="/Projects/projectmanager.png" alt="Project Manager Logo" title="Project Manager">
 					<div class="text-sm col-span-4">
 						<div class="flex space-x-2 items-center">
-							<span class="font-bold text-base">Project Manager</span>
+							<span class="font-bold text-base md:text-lg">Project Manager</span>
 							<a href="https://github.com/miguelmagueijo/ProjectManager" target="_blank" rel="noopener noreferrer">
 								<Icons.Github width="20px" class="fill-black dark:fill-white" />
 							</a>
@@ -127,11 +131,11 @@ import Icons from "../svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.EmbedCode class="fill-primary dark:fill-darkPrimary" width="25px" />
-				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient">Programming languages</h2>
+				<Icons.EmbedCode class="fill-primary dark:fill-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Programming languages</h2>
 			</div>
 			<hr class="line-gradient dark:line-dark-gradient mb-4">
-			<div class="grid grid-cols-6 gap-4 items-center programming-languages-imgs">
+			<div class="grid grid-cols-6 gap-4 items-center programming-languages-imgs sm:grid-cols-10">
 				<img class="bg-white" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" alt="Java Logo" title="Java" />
 				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" title="Python" />
 				<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Javascript Logo" title="Javascript" />
@@ -146,10 +150,10 @@ import Icons from "../svgs/";
 		<section class="my-10 p-1 bg-gradient dark:bg-dark-gradient rounded">
 			<details class="bg-white dark:bg-black">
 				<summary class="p-2 flex justify-between items-center">
-					<span class="inline-block text-xl font-bold text-gradient dark:text-dark-gradient">Others</span>
-					<Icons.ArrowDown class="otherArrow fill-secondary dark:fill-darkSecondary" width="25px" />
+					<span class="inline-block text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Others</span>
+					<Icons.ArrowDown class="otherArrow fill-secondary dark:fill-darkSecondary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 				</summary>
-				<div class="p-2 rounded-b">
+				<div class="p-2 rounded-b md:text-lg">
 					<h3 class="font-bold">Areas of interest</h3>
 					<ul class="list-disc list-inside">
 						<li>Gaming</li>
@@ -217,7 +221,7 @@ import Icons from "../svgs/";
 	}
 
 	.img {
-		width: 35vw;
+		@apply w-40 md:w-52;
 		margin: auto;
 	}
 
