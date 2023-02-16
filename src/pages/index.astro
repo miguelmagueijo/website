@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Icons from "../svgs/";
+import { Icons } from "../svgs/";
 ---
 
 <Layout title="Home | Miguel Magueijo">
@@ -20,7 +20,7 @@ import Icons from "../svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.StudentCap class="fill-primary dark:fill-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+				<Icons.User class=" stroke-primary dark:stroke-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Education</h2>
 			</div>
 			<hr class="line-gradient dark:line-dark-gradient mb-4">
@@ -55,7 +55,7 @@ import Icons from "../svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.Briefcase class="fill-primary dark:fill-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+				<Icons.Suitcase class=" stroke-primary dark:stroke-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Work experience</h2>
 			</div>
 			<hr class="line-gradient dark:line-dark-gradient mb-4">
@@ -81,7 +81,7 @@ import Icons from "../svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.ConceptBulb class="fill-primary dark:fill-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+				<Icons.Box class="stroke-primary dark:stroke-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Projects</h2>
 			</div>
 			<hr class="line-gradient dark:line-dark-gradient mb-4">
@@ -131,7 +131,7 @@ import Icons from "../svgs/";
 		</section>
 		<section class="my-10">
 			<div class="flex space-x-2 items-center">
-				<Icons.EmbedCode class="fill-primary dark:fill-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+				<Icons.CodeDesktop class="stroke-primary dark:stroke-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 				<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Technologies</h2>
 			</div>
 			<hr class="line-gradient dark:line-dark-gradient mb-4">
@@ -154,7 +154,7 @@ import Icons from "../svgs/";
 			<details class="bg-white dark:bg-black">
 				<summary class="p-2 flex justify-between items-center">
 					<span class="inline-block text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Others</span>
-					<Icons.ArrowDown class="otherArrow fill-secondary dark:fill-darkSecondary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+					<Icons.ArrowDown class="otherArrow stroke-secondary dark:stroke-darkSecondary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" strokeWidth={ 3 } />
 				</summary>
 				<div class="p-2 rounded-b md:text-lg">
 					<h3 class="font-bold">Areas of interest</h3>
@@ -197,14 +197,15 @@ import Icons from "../svgs/";
 	.otherArrow {
 		display: inline-block;
 		transition: transform 300ms;
+		transform: rotate(-90deg);
 	}
 
 	details > summary {
 		cursor: pointer;
 	}
 
-	details[open] svg {
-		transform: rotate(90deg);
+	details[open] .otherArrow {
+		transform: rotate(0deg);
 	}
 
 	details[open] > *:not(summary) {

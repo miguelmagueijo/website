@@ -1,15 +1,45 @@
 import ArrowDown from "./ArrowDown.astro";
-import Briefcase from "./BriefCase.astro";
-import EmbedCode from "./EmbedCode.astro";
+import Box from "./Box.astro";
+import CodeDesktop from "./CodeDesktop.astro";
 import Github from "./Github.astro";
-import StudentCap from "./StudentCap.astro";
-import ConceptBulb from "./ConceptBulb.astro";
+import Suitcase from "./Suitcase.astro";
+import User from "./User.astro";
 
-export default {
+const DEFAULT_WIDTH = "500px";
+const DEFAULT_HEIGHT = "500px";
+const DEFAULT_STROKE = "#000000";
+const DEFAULT_STROKE_WIDTH = 2;
+const DEFAULT_FILL = "none";
+
+export function cleanProps(props: SvgIconArgs) {
+    props.width = props.width || DEFAULT_WIDTH;
+    props.height = props.height || DEFAULT_HEIGHT;
+    props.stroke = props.stroke || DEFAULT_STROKE;
+    props.fill = props.fill || DEFAULT_FILL;
+
+    if (props.class) {
+        if (props.class.includes("stroke-"))
+            props.stroke = null;
+        if (props.class.includes("fill-"))
+            props.fill = null;
+        if (props.class.includes("w-"))
+            props.width = null;
+        if (props.class.includes("h-"))
+            props.height = null;
+    }
+
+    if (isNaN(Number(props.strokeWidth))) {
+        props.strokeWidth = DEFAULT_STROKE_WIDTH;
+    }
+
+    return props;
+}
+
+export const Icons = {
     ArrowDown,
-    Briefcase,
-    EmbedCode,
+    Box,
+    CodeDesktop,
     Github,
-    StudentCap,
-    ConceptBulb,
+    Suitcase,
+    User,
 };
