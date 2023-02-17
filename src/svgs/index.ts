@@ -1,7 +1,9 @@
 import ArrowDown from "./ArrowDown.astro";
 import Box from "./Box.astro";
 import CodeDesktop from "./CodeDesktop.astro";
+import Facebook from "./Facebook.astro";
 import Github from "./Github.astro";
+import LinkedIn from "./LinkedIn.astro";
 import Suitcase from "./Suitcase.astro";
 import User from "./User.astro";
 
@@ -39,7 +41,9 @@ export const Icons = {
     ArrowDown,
     Box,
     CodeDesktop,
+    Facebook,
     Github,
+    LinkedIn,
     Suitcase,
     User,
 };
