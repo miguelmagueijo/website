@@ -15,8 +15,25 @@ const { title } = Astro.props as Props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Miguel Magueijo personal website. In this website you can see more about Miguel Magueijo and his contacts">
+		<meta name="keywords" content="Miguel, Magueijo, Website">
+		<meta name="author" content="Miguel Magueijo">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://www.miguelmagueijo.pt/">
+		<meta property="og:title" content={title}>
+		<meta property="og:site_name" content="Miguel Magueijo">
+		<meta property="og:description" content="Who's this mysterious person? Open and find out!">
+		<meta property="og:image" itemprop="image" content="/og_image.png">
+		<meta property="og:image:width" content="1182" />
+		<meta property="og:image:height" content="705" />
+		<meta property="og:image:alt" content="Miguel Magueijo text with primary and secondary colors (light and dark themes)" />
+		<meta name="twitter:card" content="summary_large_image">
 		<title>{title}</title>
 
 		<script is:inline>
