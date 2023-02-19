@@ -1,23 +1,29 @@
 ---
-    enum TabsIDs {
-        "home",
-        "fis",
-        "contact"
-    }
+export enum TabsIDs {
+    "home",
+    "fis",
+    "contact"
+}
 
-    interface Props {
-        activeID?: TabsIDs
-    }
+interface Props {
+    activeID?: TabsIDs
+}
 
-    const { activeID } = Astro.props;
+const { activeID } = Astro.props as Props;
+// Workaround because @apply is not working as intended with dark mode
+const navbarBtnClass = "hover:bg-white hover:text-primary dark:hover:text-darkPrimary";
+const navbarBtnActiveClass = "active text-primary dark:text-darkPrimary";
 ---
-<nav class="bg-gradient-a dark:bg-dark-gradient-a">
+<nav id="navbar" class="bg-gradient-a dark:bg-dark-gradient-a">
     <ul class="flex space-x-4 items-center md:text-lg">
         <li>
-            <a class={`navbar-btn ${activeID === TabsIDs.home ? "active" : ""}`} href="/">Home</a>
+            <a class={`navbar-btn ${navbarBtnClass} ${activeID === TabsIDs.home ? navbarBtnActiveClass : ""}`} href="/">Home</a>
         </li>
         <li>
-            <a class="navbar-btn" href="/dummy">Dummy</a>
+            <a class={`navbar-btn ${navbarBtnClass} ${activeID === TabsIDs.contact ? navbarBtnActiveClass : ""}`} href="/contact">Contact</a>
+        </li>
+        <li>
+            <a class={`navbar-btn ${navbarBtnClass} ${activeID === TabsIDs.fis ? navbarBtnActiveClass : ""}`} href="/forged-in-space">ForgedIn.Space</a>
         </li>
         <li class="flex-grow text-right">
             <span id="themeBtn"></span>
@@ -55,11 +61,11 @@
     }
 
     .navbar-btn {
-        @apply px-2 py-1 rounded;
+        @apply px-2 py-1 rounded duration-300 text-white;
     }
 
     .navbar-btn.active {
-        @apply bg-white text-primary dark:text-darkPrimary font-bold;
+        @apply bg-white font-bold underline decoration-2;
     }
 
     #themeBtn {
