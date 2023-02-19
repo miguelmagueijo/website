@@ -1,9 +1,10 @@
 ---
+import { TabsIDs } from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import { Icons } from "../svgs/";
 ---
 
-<Layout title="Home | Miguel Magueijo">
+<Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.home }>
 	<main>
 		<section class="my-5">
 			<div class="md:grid md:grid-cols-2 md:items-center">
