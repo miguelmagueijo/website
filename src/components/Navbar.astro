@@ -1,12 +1,25 @@
 ---
+    enum TabsIDs {
+        "home",
+        "fis",
+        "contact"
+    }
 
+    interface Props {
+        activeID?: TabsIDs
+    }
+
+    const { activeID } = Astro.props;
 ---
 <nav class="bg-gradient-a dark:bg-dark-gradient-a">
-    <ul class="flex justify-between items-center md:text-lg">
+    <ul class="flex space-x-4 items-center md:text-lg">
         <li>
-            <a class="underline navbar-btn" href="/">Home</a>
+            <a class={`navbar-btn ${activeID === TabsIDs.home ? "active" : ""}`} href="/">Home</a>
         </li>
         <li>
+            <a class="navbar-btn" href="/dummy">Dummy</a>
+        </li>
+        <li class="flex-grow text-right">
             <span id="themeBtn"></span>
         </li>
     </ul>
@@ -35,16 +48,18 @@
 
 <style>
     nav {
-        @apply w-full rounded top-4 p-4 font-bold z-50;
+        @apply w-full rounded top-4 p-4 z-50;
         position: sticky;
         overflow: hidden;
         backdrop-filter: blur(1px);
     }
 
     .navbar-btn {
-        @apply px-2 py-1 rounded font-bold bg-white;
-        mix-blend-mode:screen;
-        color: black;
+        @apply px-2 py-1 rounded;
+    }
+
+    .navbar-btn.active {
+        @apply bg-white text-primary dark:text-darkPrimary font-bold;
     }
 
     #themeBtn {
