@@ -1,6 +1,8 @@
 import ArrowDown from "./ArrowDown.astro";
 import Box from "./Box.astro";
+import Clipboard from "./Clipboard.astro";
 import CodeDesktop from "./CodeDesktop.astro";
+import Email from "./Email.astro";
 import Facebook from "./Facebook.astro";
 import Github from "./Github.astro";
 import LinkedIn from "./LinkedIn.astro";
@@ -40,7 +42,9 @@ export function cleanProps(props: SvgIconArgs) {
 export const Icons = {
     ArrowDown,
     Box,
+    Clipboard,
     CodeDesktop,
+    Email,
     Facebook,
     Github,
     LinkedIn,
