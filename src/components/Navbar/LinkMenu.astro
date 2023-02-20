@@ -1,0 +1,17 @@
+---
+    import LinkA from "./LinkA.astro";
+    import { TabsIDs } from "./";
+
+    interface Props {
+        id?: string,
+        className?: string,
+        activeID?: TabsIDs,
+    }
+
+    const { activeID, id, className } = Astro.props as Props;
+---
+<ul id={ id } class={ className }>
+    <LinkA text="Home" href="/" isActive={ activeID === TabsIDs.home } />
+    <LinkA text="Contact" href="/contact" isActive={ activeID === TabsIDs.contact } />
+    <LinkA text="ForgedIn.Space" href="/forged-in-space" isActive={ activeID === TabsIDs.fis } />
+</ul>

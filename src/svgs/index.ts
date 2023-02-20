@@ -5,6 +5,7 @@ import CodeDesktop from "./CodeDesktop.astro";
 import Email from "./Email.astro";
 import Facebook from "./Facebook.astro";
 import Github from "./Github.astro";
+import HambugerMenu from "./HamburgerMenu.astro";
 import LinkedIn from "./LinkedIn.astro";
 import Suitcase from "./Suitcase.astro";
 import User from "./User.astro";
@@ -47,6 +48,7 @@ export const Icons = {
     Email,
     Facebook,
     Github,
+    HambugerMenu,
     LinkedIn,
     Suitcase,
     User,
