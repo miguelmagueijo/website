@@ -1,23 +1,69 @@
 ---
     import { Icons } from "../../svgs/";
-import ContactList from "./ContactList.astro";
-    import LinkMenu from "./LinkList.astro";
+    import type { PageLink, ContactLink } from "./types";
 
     const currentYear = new Date().getFullYear();
+
+    const pageLinks: Array<PageLink> = [
+        {
+            href: "/",
+            text: "Home"
+        },
+        {
+            href: "/contact",
+            text: "Contact"
+        },
+        {
+            href: "/forged-in-space",
+            text: "ForgedIn.Space"
+        },
+    ];
+
+    const contactLinks: Array<ContactLink> = [
+        {
+            href: "https://www.linkedin.com/in/miguel-magueijo/",
+            text: "/miguelmagueijo",
+            title: "LinkedIn - Miguel Magueijo",
+            icon: Icons.LinkedIn,
+        },
+        {
+            href: "https://www.facebook.com/profile.php?id=100077211735856",
+            text: "Miguel Magueijo",
+            title: "Facebook - Miguel Magueijo",
+            icon: Icons.Facebook,
+        },
+    ]
 ---
 <footer class="bg-gradient-a dark:bg-dark-gradient-a">
     <div class="grid grid-cols-1 grid-rows-2 gap-4 md:grid-cols-2 md:grid-rows-1">
         <div>
-            <h3 class="font-bold text-xl md:text-2xl">
+            <h3 class="font-bold text-lg md:text-xl">
                 Links
             </h3>
-            <LinkMenu className="underline md:text-lg" />
+            <ul class="underline">
+                { pageLinks.map((link) =>
+                    <li>
+                        <a href={ link.href }>
+                            { link.text }
+                        </a>
+                    </li>
+                ) }
+            </ul>
         </div>
         <div>
             <h3 id="footer-socials" class="mb-2 font-bold text-lg md:text-xl">
                 Contact me
             </h3>
-            <ContactList />
+            <ul class="grid grid-flow-col">
+                { contactLinks.map((link) =>
+                    <li>
+                        <a class="flex justify-start items-center space-x-2 underline md:no-underline hover:underline" href={ link.href } target="_blank" rel="noopener noreferrer" title={ link.title }>
+                            <link.icon class="fill-white w-[20px] h-[20px]" slot="icon" />
+                            <p>{ link.text }</p>
+                        </a>
+                    </li>
+                ) }
+            </ul>
             <div class="relative mt-4 p-1 font-bold bg-white rounded shadow-inner text-lg md:text-xl flex items-center">
                 <span id="some-hop" class="cursor-pointer">
                     <Icons.Email class="stroke-primary dark:stroke-darkPrimary w-[35px] h-[35px]" />
