@@ -1,0 +1,94 @@
+---
+    import { Icons } from "../../svgs";
+    import LinkMenu from "./LinkMenu.astro";
+    import type { TabsIDs } from "./";
+
+    interface Props {
+        activeID?: TabsIDs
+    }
+
+    const { activeID } = Astro.props as Props;
+---
+<nav class="bg-gradient-a dark:bg-dark-gradient-a">
+    <div class="hidden md:flex items-center">
+        <LinkMenu className="md:flex space-x-4 items-center md:text-lg" activeID={ activeID } />
+        <div class="flex-grow text-right">
+            <span id="themeBtn" class="theme-btn"></span>
+        </div>
+    </div>
+    <div class="block md:hidden">
+        <div class="flex items-center justify-between">
+            <Icons.HambugerMenu class="menu-btn-mobile stroke-white border border-white rounded [&.active]:bg-white [&.active]:stroke-primary dark:[&.active]:stroke-darkPrimary" width="30px" height="30px" />
+            <div>
+                <span id="themeBtnMobile" class="theme-btn"></span>
+            </div>
+        </div>
+        <LinkMenu id="mobile-menu" className="hidden mt-6 space-y-2" activeID={ activeID } />
+    </div>
+</nav>
+
+<script is:inline>
+    function changeTheme(event) {
+        document.documentElement.classList.toggle("dark");
+        localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+
+        event.target.classList.add("animation");
+
+        setTimeout(() => {
+            event.target.classList.toggle("active");
+        }, 150);
+
+        setTimeout(() => {
+            event.target.classList.remove("animation");
+        }, 300);
+    }
+
+    const mobileMenu = document.getElementById("mobile-menu");
+    const themeBtnMobile = document.querySelector(".menu-btn-mobile");
+
+    if (document.documentElement.classList.contains("dark")) {
+        document.getElementById("themeBtn").classList.add("active");
+    }
+
+    document.getElementById("themeBtn").addEventListener("click", changeTheme);
+    document.getElementById("themeBtnMobile").addEventListener("click", changeTheme);
+
+
+    themeBtnMobile.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        themeBtnMobile.classList.toggle("active");
+    });
+</script>
+
+<style>
+    nav {
+        @apply w-full rounded top-4 p-4 z-50;
+        position: sticky;
+        overflow: hidden;
+        backdrop-filter: blur(1px);
+    }
+
+    .theme-btn {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .theme-btn::before {
+        content: '☀️';
+    }
+
+    .theme-btn.active::before {
+        content: '🌒';
+    }
+    
+    @keyframes Theme {
+        0%   { transform: scale(1) rotate(0deg); }
+        50%  { transform: scale(0) rotate(90deg); }
+        100% { transform: scale(1) rotate(0deg); }
+    }
+
+    .theme-btn.animation {
+        animation: Theme 300ms linear infinite;
+        transform-origin: center;
+    }
+</style>
