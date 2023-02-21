@@ -1,0 +1,15 @@
+---
+    export type Props = {
+        href: string,
+        text: string,
+        title: string
+    };
+
+    const { href, text, title } = Astro.props;
+---
+<li>
+    <a class="flex justify-start items-center space-x-2 underline md:no-underline hover:underline" href={ href } target="_blank" rel="noopener noreferrer" title={ title }>
+        <slot name="icon" />
+        <p>{ text }</p>
+    </a>
+</li>
