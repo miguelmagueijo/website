@@ -1,6 +1,6 @@
 ---
     import { Icons } from "../../svgs";
-    import LinkMenu from "./LinkMenu.astro";
+    import PagesLinks from "./PagesLinks.astro";
     import type { TabsIDs } from "./";
 
     interface Props {
@@ -11,7 +11,7 @@
 ---
 <nav class="bg-gradient-a dark:bg-dark-gradient-a">
     <div class="hidden md:flex items-center">
-        <LinkMenu className="md:flex space-x-4 items-center md:text-lg" activeID={ activeID } />
+        <PagesLinks className="md:flex space-x-4 items-center md:text-lg" activeID={ activeID } />
         <div class="flex-grow text-right">
             <span id="themeBtn" class="theme-btn"></span>
         </div>
@@ -23,7 +23,7 @@
                 <span id="themeBtnMobile" class="theme-btn"></span>
             </div>
         </div>
-        <LinkMenu id="mobile-menu" className="hidden mt-6 space-y-2" activeID={ activeID } />
+        <PagesLinks id="mobile-menu" className="hidden mt-6 space-y-2" activeID={ activeID } />
     </div>
 </nav>
 
@@ -43,20 +43,23 @@
         }, 300);
     }
 
+    const mobileMenuBtn = document.querySelector(".menu-btn-mobile");
     const mobileMenu = document.getElementById("mobile-menu");
-    const themeBtnMobile = document.querySelector(".menu-btn-mobile");
+    const themeBtnDesktop = document.getElementById("themeBtn");
+    const themeBtnMobile = document.getElementById("themeBtnMobile");
 
     if (document.documentElement.classList.contains("dark")) {
-        document.getElementById("themeBtn").classList.add("active");
+        themeBtnDesktop.classList.add("active");
+        themeBtnMobile.classList.add("active");
     }
 
-    document.getElementById("themeBtn").addEventListener("click", changeTheme);
-    document.getElementById("themeBtnMobile").addEventListener("click", changeTheme);
+    themeBtnDesktop.addEventListener("click", changeTheme);
+    themeBtnMobile.addEventListener("click", changeTheme);
 
 
-    themeBtnMobile.addEventListener("click", () => {
+    mobileMenuBtn.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
-        themeBtnMobile.classList.toggle("active");
+        mobileMenuBtn.classList.toggle("active");
     });
 </script>
 
@@ -69,6 +72,7 @@
     }
 
     .theme-btn {
+        @apply text-lg md:text-xl;
         display: inline-block;
         cursor: pointer;
     }
@@ -82,13 +86,14 @@
     }
     
     @keyframes Theme {
-        0%   { transform: scale(1) rotate(0deg); }
-        50%  { transform: scale(0) rotate(90deg); }
+        0%   { transform: scale(1) rotate(360deg); }
+        50%  { transform: scale(0.80); }
         100% { transform: scale(1) rotate(0deg); }
     }
 
     .theme-btn.animation {
         animation: Theme 300ms linear infinite;
         transform-origin: center;
+        background-color: transparent;
     }
 </style>

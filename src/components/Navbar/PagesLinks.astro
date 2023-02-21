@@ -1,0 +1,45 @@
+---
+    import { TabsIDs } from "./";
+    import type { PageLink } from "./types";
+
+    interface Props {
+        id?: string,
+        className?: string,
+        activeID?: TabsIDs,
+    }
+
+    const { activeID, id, className } = Astro.props as Props;
+
+    const links: Array<PageLink> = [
+        {
+            href: "/",
+            text: "Home",
+            isActive: activeID === TabsIDs.home
+        },
+        {
+            href: "/contact",
+            text: "Contact",
+            isActive: activeID === TabsIDs.contact
+        },
+        {
+            href: "/forged-in-space",
+            text: "ForgedIn.Space",
+            isActive: activeID === TabsIDs.fis
+        },
+    ];
+---
+<ul id={ id } class={ className }>
+    { links.map((link) => 
+        <a class:list={[
+            "px-2 py-1 rounded duration-300 font-bold block w-full md:w-auto no-underline text-center",
+            { 
+                "hover:bg-white hover:text-primary dark:hover:text-darkPrimary text-white": !link.isActive,
+                "bg-white underline decoration-2 text-primary dark:text-darkPrimary": link.isActive,
+            }
+        ]}
+            href={ link.href }
+        >
+            { link.text }
+        </a>
+    ) }
+</ul>
