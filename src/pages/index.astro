@@ -256,7 +256,7 @@
             <div class="grid grid-flow-row md:grid-flow-col gap-4 md:grid-cols-3">
                 { contactsLinks.map((link) =>
                     <a class="flex space-x-4 items-center text-base md:text-lg underline md:no-underline md:hover:underline" href={link.href} target="_blank">
-                        <link.icon class="fill-black dark:fill-white w-[30px] h-[30px]" />
+                        <link.icon class="fill-black dark:fill-white w-[25px] h-[25px] md:w-[30px] md:h-[30px]" />
                         <p>{link.text}</p>
                     </a>
                 ) }
