@@ -64,17 +64,6 @@
                     </li>
                 ) }
             </ul>
-            <div class="relative mt-4 p-1 font-bold bg-white rounded shadow-inner text-lg md:text-xl flex items-center">
-                <span id="some-hop" class="cursor-pointer">
-                    <Icons.Email class="stroke-primary dark:stroke-darkPrimary w-[35px] h-[35px]" />
-                </span>
-                <p id="some-rea" class="relative text-center cursor-pointer text-gradient dark:text-dark-gradient flex-grow underline md:no-underline hover:underline hover:decoration-2 hover:decoration-primary hover:dark:decoration-darkPrimary">
-                    Click to reveal
-                    <p id="some-copy" class="copy-label">
-                        Copied!
-                    </p>
-                </p>
-            </div>
         </div>
     </div>
     <hr class="my-4 rounded border-2">
@@ -91,67 +80,9 @@
     </div>
 </footer>
 
-<script>
-    const ehp = document.getElementById("some-hop");
-    const rea = document.getElementById("some-rea");
-    const cl = document.getElementById("some-copy");
-    const z = Math.pow(2, 6);
-    const a = "ma";
-    const n = "magueijo";
-    const m = "miguel";
-    const s = {
-        "aa": "il",
-        "z": String.fromCharCode(z),
-        "c": "eu",
-        "k": ".",
-        "b": "to",
-        "bb": "pt",
-        "cc": ":"
-    }
-    let isRea = false;
-    let currJob: number | undefined;
-
-    if (ehp !== null) {
-        ehp.addEventListener("click", () => { window.location.href=`${a}${s.aa}${s.b}${s.cc}${s.c}${s.z}${m}${n}${s.k}${s.bb}` });
-    }
-
-    if (rea !== null) {
-        rea.addEventListener("click", (e) => {
-            if (!isRea) {
-                rea.innerHTML = `${s.c}${s.z}${m}${n}${s.k}${s.bb}`;
-                isRea = true;
-            } else {
-                navigator.clipboard.writeText(`${s.c}${s.z}${m}${n}${s.k}${s.bb}`);
-                if (cl !== null) {
-                    cl.classList.add("active");
-
-                    if (currJob)
-                        clearTimeout(currJob);
-
-                    currJob = setTimeout(() => { cl.classList.remove("active"); console.log("here") }, 2000);
-                }
-            }
-        });
-    }
-</script>
-
 <style>
     footer {
         @apply w-full p-4 rounded text-white;
         backdrop-filter: blur(1px);
-    }
-
-    .copy-label {
-        @apply absolute text-white p-2 bg-black rounded text-sm duration-300;
-        visibility: hidden;
-        bottom: -120%;
-        left: 50%;
-        transform: translate(-25%, -50%);
-        opacity: 0;
-    }
-
-    .copy-label.active {
-        visibility: visible;
-        opacity: 100;
     }
 </style>
