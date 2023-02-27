@@ -41,13 +41,13 @@
 
 		<script is:inline>
 			if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-				document.documentElement.classList.add("dark");
+				document.documentElement.classList.add("tw-dark");
 			} else {
-				document.documentElement.classList.remove("dark");
+				document.documentElement.classList.remove("tw-dark");
 			}
 		</script>
 	</head>
-	<body class="bg-white text-black dark:bg-black dark:text-white p-4 md:px-0 md:w-[750px] md:m-auto">
+	<body class="tw-bg-white tw-text-black dark:tw-bg-black dark:tw-text-white tw-p-4 md:tw-px-0 md:tw-w-[750px] md:tw-m-auto">
 		<Navbar activeID={ activeTabID } />
 		<main>
 			<slot />

@@ -10,27 +10,27 @@
     const { activeID } = Astro.props as Props;
 ---
 <nav class="bg-gradient-a dark:bg-dark-gradient-a">
-    <div class="hidden md:flex items-center">
-        <PagesLinks className="md:flex space-x-4 items-center md:text-lg" activeID={ activeID } />
-        <div class="flex-grow text-right">
+    <div class="tw-hidden md:tw-flex tw-items-center">
+        <PagesLinks className="md:tw-flex tw-space-x-4 tw-items-center md:tw-text-lg" activeID={ activeID } />
+        <div class="tw-flex-grow tw-text-right">
             <span id="themeBtn" class="theme-btn"></span>
         </div>
     </div>
-    <div class="block md:hidden">
-        <div class="flex items-center justify-between">
-            <Icons.HambugerMenu class="menu-btn-mobile stroke-white border border-white rounded [&.active]:bg-white [&.active]:stroke-primary dark:[&.active]:stroke-darkPrimary" width="30px" height="30px" />
+    <div class="tw-block md:tw-hidden">
+        <div class="tw-flex tw-items-center tw-justify-between">
+            <Icons.HambugerMenu class="menu-btn-mobile tw-stroke-white tw-border tw-border-white tw-rounded [&.active]:tw-bg-white [&.active]:tw-stroke-primary dark:[&.active]:tw-stroke-darkPrimary" width="30px" height="30px" />
             <div>
                 <span id="themeBtnMobile" class="theme-btn"></span>
             </div>
         </div>
-        <PagesLinks id="mobile-menu" className="hidden mt-6 space-y-2" activeID={ activeID } />
+        <PagesLinks id="mobile-menu" className="tw-hidden tw-mt-6 tw-space-y-2" activeID={ activeID } />
     </div>
 </nav>
 
 <script is:inline>
     function changeTheme(event) {
-        document.documentElement.classList.toggle("dark");
-        localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+        document.documentElement.classList.toggle("tw-dark");
+        localStorage.theme = document.documentElement.classList.contains("tw-dark") ? "dark" : "light";
 
         event.target.classList.add("animation");
 
@@ -48,7 +48,7 @@
     const themeBtnDesktop = document.getElementById("themeBtn");
     const themeBtnMobile = document.getElementById("themeBtnMobile");
 
-    if (document.documentElement.classList.contains("dark")) {
+    if (document.documentElement.classList.contains("tw-dark")) {
         themeBtnDesktop.classList.add("active");
         themeBtnMobile.classList.add("active");
     }
@@ -58,23 +58,18 @@
 
 
     mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("tw-hidden");
         mobileMenuBtn.classList.toggle("active");
     });
 </script>
 
 <style>
     nav {
-        @apply w-full rounded top-4 p-4 z-50;
-        position: sticky;
-        overflow: hidden;
-        backdrop-filter: blur(1px);
+        @apply tw-w-full tw-rounded tw-top-4 tw-p-4 tw-z-50 tw-sticky tw-overflow-hidden tw-backdrop-blur-sm;
     }
 
     .theme-btn {
-        @apply text-lg md:text-xl;
-        display: inline-block;
-        cursor: pointer;
+        @apply tw-inline-block tw-cursor-pointer tw-text-lg md:tw-text-xl;
     }
 
     .theme-btn::before {

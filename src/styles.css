@@ -19,34 +19,34 @@ details summary::-webkit-details-marker {
 
 @layer components {
     .bg-gradient {
-        @apply bg-gradient-to-r from-primary to-secondary;
+        @apply tw-bg-gradient-to-r tw-from-primary tw-to-secondary;
     }
     
     .bg-gradient-a {
-        @apply bg-gradient-to-r from-primary-a to-secondary-a;
+        @apply tw-bg-gradient-to-r tw-from-primary-a tw-to-secondary-a;
     }
     
     .bg-dark-gradient {
-        @apply bg-gradient-to-r from-darkPrimary to-darkSecondary;
+        @apply tw-bg-gradient-to-r tw-from-darkPrimary tw-to-darkSecondary;
     }
     
     .bg-dark-gradient-a {
-        @apply bg-gradient-to-r from-darkPrimary-a to-darkSecondary-a;
+        @apply tw-bg-gradient-to-r tw-from-darkPrimary-a tw-to-darkSecondary-a;
     }
     
     .text-gradient {
-        @apply text-transparent bg-clip-text bg-gradient;
+        @apply tw-text-transparent tw-bg-clip-text bg-gradient;
     }
 
     .text-dark-gradient {
-        @apply text-transparent bg-clip-text bg-dark-gradient;
+        @apply tw-text-transparent tw-bg-clip-text bg-dark-gradient;
     }
     
     .line-gradient {
-        @apply border-none h-1 rounded bg-gradient;
+        @apply tw-border-none tw-h-1 tw-rounded bg-gradient;
     }
 
     .line-dark-gradient {
-        @apply border-none h-1 rounded bg-dark-gradient;
+        @apply tw-border-none tw-h-1 tw-rounded bg-dark-gradient;
     }
 }

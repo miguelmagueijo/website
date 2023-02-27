@@ -31,10 +31,10 @@
 <ul id={ id } class={ className }>
     { links.map((link) => 
         <a class:list={[
-            "px-2 py-1 rounded duration-300 font-bold block w-full md:w-auto no-underline text-center",
+            "tw-px-2 tw-py-1 tw-rounded tw-duration-300 tw-font-bold tw-block tw-w-full md:tw-w-auto tw-no-underline tw-text-center",
             { 
-                "hover:bg-white hover:text-primary dark:hover:text-darkPrimary text-white": !link.isActive,
-                "bg-white underline decoration-2 text-primary dark:text-darkPrimary": link.isActive,
+                "hover:tw-bg-white hover:tw-text-primary dark:hover:tw-text-darkPrimary tw-text-white": !link.isActive,
+                "tw-bg-white tw-underline tw-decoration-2 tw-text-primary dark:tw-text-darkPrimary": link.isActive,
             }
         ]}
             href={ link.href }
