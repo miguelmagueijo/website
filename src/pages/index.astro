@@ -175,7 +175,7 @@
 
 	<section class="my-10 p-1 bg-gradient dark:bg-dark-gradient rounded">
 		<details class="bg-white dark:bg-black rounded">
-			<summary class="p-2 flex justify-between items-center">
+			<summary class="p-2 flex justify-between items-center cursor-pointer">
 				<span class="inline-block text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Others</span>
 				<Icons.ArrowDown class="otherArrow stroke-secondary dark:stroke-darkSecondary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" strokeWidth={ 3 } />
 			</summary>
@@ -245,13 +245,9 @@
 	}
 
 	.otherArrow {
-		display: inline-block;
+		@apply inline-block;
 		transition: transform 300ms;
 		transform: rotate(-90deg);
-	}
-
-	details > summary {
-		cursor: pointer;
 	}
 
 	details[open] .otherArrow {
@@ -275,47 +271,7 @@
 	}
 
 	.img {
-		@apply w-40 md:w-52;
-		margin: auto;
-	}
-
-	.plus-btn {
-		position: relative;
-		width: 20px;
-		height: 20px;
-		right: 0;
-	}
-
-	.plus-btn span {
-		@apply rounded;
-		position: absolute;
-		transition: 300ms;
-	}
-
-	.plus-btn-vertical {
-		height: 20%;
-		width: 100%;
-		top: 50%;
-		transform: translateY(-50%);
-		left: 0%;
-		right: 0;
-	}
-
-	.plus-btn-horizontal {
-		height: 100%;
-		width: 20%;
-		top: 0%;
-		transform: translateX(-50%);
-		left: 50%;
-		right: 0;
-	}
-
-	.plus-btn.active span {
-		transform: rotate(90deg);
-	}
-
-	.plus-btn.active .plus-btn-vertical {
-		opacity: 0;
+		@apply w-40 md:w-52 m-auto;
 	}
 
 	.logo-image {
@@ -323,20 +279,18 @@
 	}
 
 	.project-pill {
-		@apply inline-block text-xs font-bold rounded text-white;
-		position: relative;
+		@apply inline-block text-xs font-bold rounded text-white relative;
 		padding-left: 1.1rem;
 		padding-right: 0.5rem;
 	}
 
 	.project-pill::after {
-		position: absolute;
+		@apply absolute rounded-full;
 		content: '';
 		width: 0.55rem;
 		height: 0.55rem;
 		top: 50%;
 		left: 0.3rem;
-		border-radius: 99%;
 		transform: translateY(-50%);
 	}
 
