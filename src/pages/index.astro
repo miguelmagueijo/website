@@ -2,6 +2,9 @@
 	import { TabsIDs } from "../components/Navbar/";
 	import Layout from "../layouts/Layout.astro";
 	import { Icons } from "../svgs/";
+	import { studies as StudiesInfos } from "../data/education";
+	import { jobs as JobsInfos } from "../data/jobs";
+	import { projects as ProjectsInfos } from "../data/projects";
 
 	interface ContactLink {
         href: string,
@@ -72,33 +75,17 @@
 		</div>
 		<hr class="line-gradient dark:line-dark-gradient mb-4">
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
-			<li class="grid grid-cols-5 gap-4">
-				<img class="logo-image support-dark" src="https://www.ipcb.pt/sites/default/files/ipcb_estcb.svg" alt="IPCB Escola Superior de Tecnologias Logo" title="IPCB Escola Superior de Tecnologias">
-				<div class="text-sm col-span-4">
-					<p class="font-bold text-lg md:text-xl">Informatics and Multimedia</p>
-					<p class="font-semibold">Instituto Politécnico de Castelo Branco</p>
-					<p>Bachelor</p>
-					<p>Sep 2021 - </p>
-				</div>
-			</li>
-			<li class="grid grid-cols-5 gap-4">
-				<img class="logo-image support-dark" src="https://www.ipcb.pt/sites/default/files/ipcb_estcb.svg" alt="IPCB Escola Superior de Tecnologias Logo" title="IPCB Escola Superior de Tecnologias">
-				<div class="text-sm col-span-4">
-					<p class="font-bold text-lg md:text-xl">Technologies and Information Systems Programming</p>
-					<p class="font-semibold">Instituto Politécnico de Castelo Branco</p>
-					<p>Higher Professional Technical Course</p>
-					<p>Sep 2019 - Jul 2021</p>
-				</div>
-			</li>
-			<li class="grid grid-cols-5 gap-4">
-				<img class="logo-image support-dark" src="/3rdParty/AEF.png" alt="Agrupamento de Escolas do Fundão Logo" title="Agrupamento de Escolas do Fundão">
-				<div class="text-sm col-span-4">
-					<p class="font-bold text-lg md:text-xl">Management and Programming of Information Systems</p>
-					<p class="font-semibold">Agrupamento de Escolas do Fundão</p>
-					<p>Professional Course</p>
-					<p>Sep 2016 - Jul 2019</p>
-				</div>
-			</li>
+			{ StudiesInfos.map( (s) => 
+				<li class="grid grid-cols-5 gap-4">
+					<img class="logo-image support-dark" src={ s.imgUrl } alt={ s.imgAlt } title={ s.imgTitle } />
+					<div class="text-sm col-span-4">
+						<p class="font-bold text-lg md:text-xl">{ s.courseName }</p>
+						<p class="font-semibold">{ s.schoolName }</p>
+						<p>{ s.degree }</p>
+						<p>{ s.start } - { s.end }</p>
+					</div>
+				</li>
+			).reverse() }
 		</ul>
 	</section>
 
@@ -109,24 +96,17 @@
 		</div>
 		<hr class="line-gradient dark:line-dark-gradient mb-4">
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
-			<li class="grid grid-cols-5 gap-4">
-				<img class="logo-image" src="https://www.engineetech365.com/wp-content/uploads/2020/03/capgemini-logo-1024x1024.jpg" alt="Capgemini Engineering Logo" title="Capgemini Engineering">
-				<div class="text-sm col-span-4">
-					<p class="font-bold text-lg md:text-xl">Full-stack Web Developer</p>
-					<p class="font-semibold">Capgemini Engineering</p>
-					<p>Curricular internship</p>
-					<p>Mar 2021 - Jul 2021</p>
-				</div>
-			</li>
-			<li class="grid grid-cols-5 gap-4">
-				<img class="logo-image support-dark" src="/3rdParty/CommunitiesComunicacoes.png" alt="Communities - Comunicações, Lda Logo" title="Communities - Comunicações, Lda">
-				<div class="text-sm col-span-4">
-					<p class="font-bold text-lg md:text-xl">Full-stack Web Developer</p>
-					<p class="font-semibold">Communities - Comunicações, Lda</p>
-					<p>Curricular internship</p>
-					<p>May 2018 - Jun 2018</p>
-				</div>
-			</li>
+			{ JobsInfos.map( (j) => 
+				<li class="grid grid-cols-5 gap-4">
+					<img class="logo-image" src={ j.imgUrl } alt={ j.imgAlt } title={ j.imgTitle } />
+					<div class="text-sm col-span-4">
+						<p class="font-bold text-lg md:text-xl">{ j.jobName }</p>
+						<p class="font-semibold">{ j.companyName }</p>
+						<p>{ j.positionName }</p>
+						<p>{ j.start } - { j.end }</p>
+					</div>
+				</li>
+			).reverse() }
 		</ul>
 	</section>
 
@@ -137,45 +117,35 @@
 		</div>
 		<hr class="line-gradient dark:line-dark-gradient mb-4">
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
-			<li class="grid grid-cols-5 gap-4">
-				<img class="logo-image support-dark" src="/Projects/reallearn.svg" alt="Real Learn Logo" title="Real Learn">
-				<div class="text-sm col-span-4">
-					<div class="flex space-x-2 items-center">
-						<span class="font-bold text-lg md:text-xl">Real Learn</span>
-						<a href="https://github.com/miguelmagueijo/Real-Learn" target="_blank" rel="noopener noreferrer">
-							<Icons.Github width="20px" class="fill-black dark:fill-white" />
-						</a>
+			{ ProjectsInfos.map( (p) =>
+				<li class="grid grid-cols-5 gap-4">
+					<img class="logo-image support-dark" src={ p.imgUrl } alt={ p.imgAlt } title={ p.imgTitle } />
+					<div class="text-sm col-span-4">
+						<div class="flex space-x-2 items-center">
+							<span class="font-bold text-lg md:text-xl">{ p.name }</span>
+							{
+								p.githubRepo
+								&& 
+								<a href={ p.githubRepo } target="_blank" rel="noopener noreferrer">
+								<Icons.Github width="20px" class="fill-black dark:fill-white" />
+								</a>
+							}
+							</div>
+						{
+							p.isActive
+							&&
+							<a href={ p.link } class="project-pill active-project-pill" target="_blank">Active</a>
+						}
+						{
+							p.isArchived
+							&&
+							<span class="project-pill archived-project-pill">Archived</span>
+						}
+						<p class="font-semibold">{ p.smallDesc }</p>
+						<p>{ p.year }</p>
 					</div>
-					<p class="font-semibold">Group school project inspired by moodle</p>
-					<p>2021</p>
-				</div>
-			</li>
-			<li class="grid grid-cols-5 gap-4">
-				<img class="logo-image support-dark" src="/Projects/popcornlist.png" alt="PopCornList Logo" title="PopCornList">
-				<div class="text-sm col-span-4">
-					<div class="flex space-x-2 items-center">
-						<span class="font-bold text-lg md:text-xl">PopCornList</span>
-						<a href="https://github.com/miguelmagueijo/DW-PopCornList" target="_blank" rel="noopener noreferrer">
-							<Icons.Github width="20px" class="fill-black dark:fill-white" />
-						</a>
-					</div>
-					<p class="font-semibold">School project to track your movies and TV shows status</p>
-					<p>2020</p>
-				</div>
-			</li>
-			<li class="grid grid-cols-5 gap-4">
-				<img class="logo-image support-dark" src="/Projects/projectmanager.png" alt="Project Manager Logo" title="Project Manager">
-				<div class="text-sm col-span-4">
-					<div class="flex space-x-2 items-center">
-						<span class="font-bold text-lg md:text-xl">Project Manager</span>
-						<a href="https://github.com/miguelmagueijo/ProjectManager" target="_blank" rel="noopener noreferrer">
-							<Icons.Github width="20px" class="fill-black dark:fill-white" />
-						</a>
-					</div>
-					<p class="font-semibold">Final professional course project to manage projects</p>
-					<p>2019</p>
-				</div>
-			</li>
+				</li>
+			).reverse() }
 		</ul>
 	</section>
 
@@ -350,5 +320,39 @@
 
 	.logo-image {
 		@apply h-[55px] w-[55px]  md:h-[60px] md:w-[60px] shadow border border-black dark:border-white dark:shadow-white border-opacity-10;
+	}
+
+	.project-pill {
+		@apply inline-block text-xs font-bold rounded text-white;
+		position: relative;
+		padding-left: 1.1rem;
+		padding-right: 0.5rem;
+	}
+
+	.project-pill::after {
+		position: absolute;
+		content: '';
+		width: 0.55rem;
+		height: 0.55rem;
+		top: 50%;
+		left: 0.3rem;
+		border-radius: 99%;
+		transform: translateY(-50%);
+	}
+
+	.active-project-pill {
+		@apply bg-green-600;
+	}
+
+	.active-project-pill::after {
+		@apply bg-white;
+	}
+
+	.archived-project-pill {
+		@apply  bg-[#a77a1b];
+	}
+
+	.archived-project-pill::after {
+		@apply bg-black/50;
 	}
 </style>
