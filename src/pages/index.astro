@@ -256,9 +256,11 @@
 			if (data.archived === true) {
 				archivedPill.classList.remove("hidden");
 				activePill.remove();
-			} else {
+			} else if (data.archived === false) {
 				activePill.classList.remove("hidden");
 				archivedPill.remove();
+			} else {
+				throw new Error();
 			}
 
 			ctx.removeAttribute("data-api");
