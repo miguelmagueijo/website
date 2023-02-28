@@ -156,7 +156,7 @@
 		<hr class="line-gradient dark:line-dark-gradient mb-4">
 		<div class="flex flex-wrap gap-2 md:gap-4 md:justify-between after:content-[''] after:flex-auto">
 			{ techKnownledge.map( (t) =>
-				<div class="border-2 p-2 flex-grow text-center rounded text-lg md:text-xl odd:border-primary even:border-secondary odd:dark:border-darkPrimary even:dark:border-darkSecondary">
+				<div class="border-2 select-none hover:odd:bg-primary hover:even:bg-secondary hover:odd:dark:bg-darkPrimary hover:even:dark:bg-darkSecondary hover:text-white hover:dark:text-black duration-300 p-2 flex-grow text-center rounded text-lg md:text-xl odd:border-primary even:border-secondary odd:dark:border-darkPrimary even:dark:border-darkSecondary">
 					{ t }
 				</div>
 			) }
@@ -297,10 +297,6 @@
 	img.support-dark {
 		@apply bg-white p-1;
 	}
-
-	/* .programming-languages-imgs img {
-		@apply p-1;
-	} */
 
 	.img {
 		@apply w-40 md:w-52 m-auto;
