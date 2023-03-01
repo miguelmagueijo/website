@@ -33,6 +33,11 @@
             icon: Icons.Github,
         },
     ];
+
+	const techKnowledge = ["Java", "Python", "Javascript", "Typescript", 
+							"PHP", "HTML", "CSS", "MySQL",
+							"Microsoft SQL Server", "Oracle DB", "Node.js",
+							"Tailwind CSS", "Git", "VS Code"];
 ---
 
 <Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.home }>
@@ -149,28 +154,19 @@
 			<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Technologies</h2>
 		</div>
 		<hr class="line-gradient dark:line-dark-gradient mb-4">
-		<div class="grid grid-cols-6 gap-4 items-center programming-languages-imgs sm:grid-cols-12">
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo" title="Java" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" title="Python" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="Javascript logo" title="Javascript" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg" alt="Typescript logo" title="Typescript" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" alt="PHP logo" title="PHP" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" alt="HTML5 logo" title="HTML5" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" alt="CSS logo" title="CSS" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain.svg" alt="MySQL logo" title="MySQL" />
-			<img class="bg-white" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Microsoft SQL Server logo" title="Microsoft SQL Server" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle logo" title="Oracle Database" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo" title="Git" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJs logo" title="NodeJs" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="TailwindCSS logo" title="TailwindCSS" />
-			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="Visual Studio Code logo" title="Visual Studio Code" />
+		<div class="flex flex-wrap gap-2 md:gap-4 md:justify-between">
+			{ techKnowledge.map( (t) =>
+				<div class="border-2 select-none hover:odd:bg-primary hover:even:bg-secondary hover:odd:dark:bg-darkPrimary hover:even:dark:bg-darkSecondary hover:text-white hover:dark:text-black duration-300 p-2 flex-grow text-center rounded text-lg md:text-xl odd:border-primary even:border-secondary odd:dark:border-darkPrimary even:dark:border-darkSecondary">
+					{ t }
+				</div>
+			) }
 		</div>
 	</section>
 
 	<section class="my-10 p-1 bg-gradient dark:bg-dark-gradient rounded">
 		<details class="bg-white dark:bg-black rounded">
 			<summary class="p-2 flex justify-between items-center cursor-pointer">
-				<span class="inline-block text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Others</span>
+				<span class="inline-block text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl select-none">Others</span>
 				<Icons.ArrowDown class="otherArrow stroke-secondary dark:stroke-darkSecondary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" strokeWidth={ 3 } />
 			</summary>
 			<div class="p-2 rounded-b">
@@ -300,10 +296,6 @@
 
 	img.support-dark {
 		@apply bg-white p-1;
-	}
-
-	.programming-languages-imgs img {
-		@apply p-1;
 	}
 
 	.img {
