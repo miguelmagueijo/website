@@ -43,10 +43,10 @@
 <Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.home }>
 	<section class="my-5">
 		<div class="md:grid md:grid-cols-2 md:items-center">
-			<img src="/me.png" class="rounded-full img bg-gradient dark:bg-dark-gradient p-0.5 md:width-full">
-			<div>
-				<h1 class="mt-2 text-2xl font-bold text-left text-primary dark:text-darkPrimary sm:text-center md:text-5xl">Miguel Magueijo</h1>
-				<h2 class="text-xl text-right text-secondary dark:text-darkSecondary sm:text-center md:text-4xl">Student & Developer</h2>
+			<img src="/me.png" class="rounded-full w-40 md:w-52 m-auto bg-gradient dark:bg-dark-gradient p-0.5 md:width-full">
+			<div class="text-center">
+				<h1 class="mt-2 text-2xl font-bold text-primary dark:text-darkPrimary md:text-5xl">Miguel Magueijo</h1>
+				<h2 class="text-xl text-secondary dark:text-darkSecondary md:text-4xl">Student & Developer</h2>
 			</div>
 		</div>
 		<div class="mt-8">
@@ -252,18 +252,6 @@
 
 	details[open] > *:not(summary) {
 		animation: show-details 300ms linear;
-	}
-
-	img {
-		@apply rounded;
-	}
-
-	img.support-dark {
-		@apply bg-white p-1;
-	}
-
-	.img {
-		@apply w-40 md:w-52 m-auto;
 	}
 
 	.logo-image {
