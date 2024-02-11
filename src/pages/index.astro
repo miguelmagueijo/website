@@ -85,7 +85,7 @@
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 			{ StudiesInfos.map( (s) => 
 				<li class="grid grid-cols-5 gap-4">
-					<img class="logo-image support-dark" src={ s.imgUrl } alt={ s.imgAlt } title={ s.imgTitle } />
+					<img class="logo-image" src={ s.imgUrl } alt={ s.imgAlt } title={ s.imgTitle } />
 					<div class="text-sm col-span-4">
 						<p class="font-bold text-lg md:text-xl">{ s.courseName }</p>
 						<p class="font-semibold">{ s.schoolName }</p>
@@ -127,7 +127,7 @@
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 			{ ProjectsInfos.map( (p) =>
 				<li class="grid grid-cols-5 gap-4">
-					<img class="logo-image support-dark" src={ p.imgUrl } alt={ p.imgAlt } title={ p.imgTitle } />
+					<img class="logo-image" src={ p.imgUrl } alt={ p.imgAlt } title={ p.imgTitle } />
 					<div class="text-sm col-span-4">
 						<div class="flex space-x-2 items-center">
 							<span class="font-bold text-lg md:text-xl">{ p.name }</span>
@@ -255,7 +255,7 @@
 	}
 
 	.logo-image {
-		@apply h-[55px] w-[55px]  md:h-[60px] md:w-[60px] shadow border border-black dark:border-white dark:shadow-white border-opacity-10;
+		@apply h-[55px] w-[55px] md:h-[60px] md:w-[60px] bg-white p-1 shadow border border-black dark:border-white border-opacity-10 rounded;
 	}
 
 	.project-pill {
