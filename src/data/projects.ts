@@ -54,5 +54,18 @@ export const projects: Array<ProjectInfo> = [
         githubRepo: `${PERSONAL_REPO_URL}/Real-Learn`,
         githubApi: `${PERSONAL_REPO_API_URL}/Real-Learn`,
         year: 2021
-    }
+    },
+    {
+        isActive: true,
+        isArchived: false,
+        imgUrl: "/Projects/croprecommendation.webp",
+        imgAlt: "Crop Recommendation Logo",
+        imgTitle: "Crop Recommendation",
+        name: "Crop Recommendation",
+        smallDesc: "Final project of my bachelor degree that focus on ML models to recommend crops",
+        link: "https://cr.miguelmagueijo.pt",
+        githubRepo: `${PERSONAL_REPO_URL}/CropRecommendation`,
+        githubApi: `${PERSONAL_REPO_API_URL}/CropRecommendation`,
+        year: 2023
+    },
 ];
