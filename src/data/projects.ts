@@ -62,7 +62,7 @@ export const projects: Array<ProjectInfo> = [
         imgAlt: "Crop Recommendation Logo",
         imgTitle: "Crop Recommendation",
         name: "Crop Recommendation",
-        smallDesc: "Final baschlors degree project that focus on ML models to recommend crops",
+        smallDesc: "Final project of my bachelor degree that focus on ML models to recommend crops",
         link: "https://cr.miguelmagueijo.pt",
         githubRepo: `${PERSONAL_REPO_URL}/CropRecommendation`,
         githubApi: `${PERSONAL_REPO_API_URL}/CropRecommendation`,

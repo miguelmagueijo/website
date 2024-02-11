@@ -139,11 +139,13 @@
 								</a>
 							}
 						</div>
-						<project-pill data-api={ p.githubApi } data-link={ p.link }>
-							<a href={ p.link } class="hidden project-pill active-project-pill" target="_blank">Active</a>
-							<span class="hidden project-pill archived-project-pill">Archived</span>
-						</project-pill>
-						<p class="font-semibold">{ p.smallDesc }</p>
+						{ p.isArchived && 
+							<span class="project-pill archived-project-pill">Archived</span>
+						}
+						{ p.isActive && 
+							<a href={ p.link } class="project-pill active-project-pill" target="_blank">Active</a>
+						}
+						<p class="font-semibold mt-1">{ p.smallDesc }</p>
 						<p>{ p.year }</p>
 					</div>
 				</li>
@@ -229,49 +231,6 @@
         </div>
     </section>
 </Layout>
-
-<script>
-	class ProjectPill extends HTMLElement {
-		constructor() {
-			super();
-			initProjectPill(this);
-		}
-	}
-
-	async function initProjectPill(ctx: ProjectPill) {
-		const archivedPill = ctx.querySelector(".archived-project-pill");
-		const activePill = ctx.querySelector(".active-project-pill");
-
-		if (archivedPill === null || activePill === null) {
-			console.error("Could not find archived or active pill");
-			return false;
-		}
-
-		try {
-			if (ctx.dataset.api === undefined)
-				throw new Error();
-
-			const response = await fetch(ctx.dataset.api);
-			const data = await response.json();
-
-			if (data.archived === true) {
-				archivedPill.classList.remove("hidden");
-				activePill.remove();
-			} else if (data.archived === false) {
-				activePill.classList.remove("hidden");
-				archivedPill.remove();
-			} else {
-				throw new Error();
-			}
-
-			ctx.removeAttribute("data-api");
-		} catch (e) {
-			ctx.remove();
-		}
-	}
-	
-	customElements.define("project-pill", ProjectPill);
-</script>
 
 <style>
 	@keyframes show-details {
