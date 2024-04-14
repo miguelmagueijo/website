@@ -1,12 +1,19 @@
 @tailwind components;
 
+/* https://stackoverflow.com/questions/69150928/how-to-create-multiple-themes-using-tailwind-css */
+
 @font-face {
     font-family: Catamaran;
     src: url("/Fonts/Catamaran_VariableFont_wght.ttf");
 }
 
+@font-face {
+    font-family: Quicksand;
+    src: url("/Fonts/QuickSand/Quicksand-VariableFont_wght.ttf");
+}
+
 * {
-    font-family: Catamaran, Arial, sans-serif;
+    font-family: Quicksand, Catamaran, Arial, sans-serif;
 }
 
 details summary {
