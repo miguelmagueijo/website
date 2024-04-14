@@ -5,34 +5,8 @@
 	import { studies as StudiesInfos } from "../data/education";
 	import { jobs as JobsInfos } from "../data/jobs";
 	import { projects as ProjectsInfos } from "../data/projects";
-
-	interface ContactLink {
-        href: string,
-        text: string,
-        title: string,
-        icon: typeof Icons[keyof typeof Icons]
-    }
-
-    const contactsLinks: Array<ContactLink> = [
-        {
-            href: "https://www.linkedin.com/in/miguel-magueijo/",
-            text: "in/miguelmagueijo",
-            title: "LinkedIn - Miguel Magueijo",
-            icon: Icons.LinkedIn,
-        },
-        {
-            href: "https://www.facebook.com/profile.php?id=100077211735856",
-            text: "Miguel Magueijo",
-            title: "Facebook - Miguel Magueijo",
-            icon: Icons.Facebook,
-        },
-        {
-            href: "https://github.com/miguelmagueijo",
-            text: "/miguelmagueijo",
-            title: "Github - Miguel Magueijo",
-            icon: Icons.Github,
-        },
-    ];
+	import { SimpleIconWrapper } from "../components/SimpleIconWrapper/";
+	import { SocialsHyperlinks } from "../data/socials";
 
 	const techKnowledge = ["Java", "Python", "Javascript", "Typescript", 
 							"PHP", "HTML", "CSS", "MySQL",
@@ -40,18 +14,25 @@
 							"Tailwind CSS", "Git", "VS Code"];
 ---
 
-<Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.home }>
-	<section class="my-5">
-		<div class="md:grid md:grid-cols-2 md:items-center">
-			<img src="/me.png" class="rounded-full w-40 md:w-52 m-auto bg-gradient dark:bg-dark-gradient p-0.5 md:width-full">
-			<div class="text-center">
-				<h1 class="mt-2 text-2xl font-bold text-primary dark:text-darkPrimary md:text-5xl">Miguel Magueijo</h1>
-				<h2 class="text-xl text-secondary dark:text-darkSecondary md:text-4xl">Student & Developer</h2>
+<Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.Home }>
+	<section class="mt-10">
+		<div class="flex justify-between items-center">
+			<img src="/me.png" class="rounded-full w-40 md:w-52 bg-gradient p-0.5 md:width-full">
+			<div class="text-right">
+				<h1 class="mt-2 text-2xl font-bold text-priry md:text-5xl">Miguel Magueijo</h1>
+				<h2 class="text-xl text-sery md:text-4xl">Student & Developer</h2>
+				<div class="flex gap-4 mt-4 justify-end">
+					{ Object.values(SocialsHyperlinks).map((hl) =>
+						<a class="group hover:scale-125 duration-300" href={ hl.url } target="_blank" referrerpolicy="no-referrer">
+							<SimpleIconWrapper classes="w-[26px] fill-sery group-hover:fill-priry group-hover:duration-300" icon={ hl.icon } />
+						</a>
+					) }
+				</div>
 			</div>
 		</div>
 		<div class="mt-8">
 			<p class="text-lg md:text-xl">
-				Hi 👋<br>I'm <b>Miguel Magueijo</b> from Portugal 🇵🇹
+				Hi 👋<br>I'm <b class="text-priry">Miguel Magueijo</b> from Portugal 🇵🇹
 			</p>
 			<p class="mt-4 md:text-lg">
 				At the moment, I am a student at IPCB (Instituto Politécnico de Castelo Branco) and I study Computer Science and Multimedia (Informática e Multimédia).
@@ -78,10 +59,10 @@
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
-			<Icons.User class=" stroke-primary dark:stroke-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
-			<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Education</h2>
+			<Icons.User class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<h2 class="text-xl font-bold text-priry md:text-2xl">Education</h2>
 		</div>
-		<hr class="line-gradient dark:line-dark-gradient mb-4">
+		<hr class="border-2 border-priry rounded mb-4">
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 			{ StudiesInfos.map( (s) => 
 				<li class="grid grid-cols-5 gap-4">
@@ -99,10 +80,10 @@
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
-			<Icons.Suitcase class=" stroke-primary dark:stroke-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
-			<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Work experience</h2>
+			<Icons.Suitcase class=" stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<h2 class="text-xl font-bold text-priry md:text-2xl">Work experience</h2>
 		</div>
-		<hr class="line-gradient dark:line-dark-gradient mb-4">
+		<hr class="border-2 border-priry rounded mb-4">
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 			{ JobsInfos.map( (j) => 
 				<li class="grid grid-cols-5 gap-4">
@@ -120,60 +101,53 @@
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
-			<Icons.Box class="stroke-primary dark:stroke-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
-			<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Projects</h2>
+			<Icons.Box class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<h2 class="text-xl font-bold text-priry md:text-2xl">Projects</h2>
 		</div>
-		<hr class="line-gradient dark:line-dark-gradient mb-4">
+		<hr class="border-2 border-priry rounded mb-4">
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 			{ ProjectsInfos.map( (p) =>
-				<li class="grid grid-cols-5 gap-4">
-					<img class="logo-image" src={ p.imgUrl } alt={ p.imgAlt } title={ p.imgTitle } />
-					<div class="text-sm col-span-4">
-						<div class="flex space-x-2 items-center">
-							<span class="font-bold text-lg md:text-xl">{ p.name }</span>
-							{
-								p.githubRepo
-								&& 
-								<a href={ p.githubRepo } target="_blank" rel="noopener noreferrer">
-								<Icons.Github width="20px" class="fill-black dark:fill-white" />
-								</a>
-							}
-						</div>
-						{ p.isArchived && 
-							<span class="project-pill archived-project-pill">Archived</span>
-						}
-						{ p.isActive && 
-							<a href={ p.link } class="project-pill active-project-pill" target="_blank">Active</a>
-						}
-						<p class="font-semibold mt-1">{ p.smallDesc }</p>
-						<p>{ p.year }</p>
+				<a href="#" class="group flex gap-2 items-center border-2 rounded border-priry/25 bg-priry/5">
+					<div class="w-1/5 p-3 bg-white/5 h-full">
+						<img class="h-full" src={ p.imgUrl } alt={ p.imgAlt } title={ p.imgTitle } />
 					</div>
-				</li>
+					<div class="w-4/5 col-span-4 block relative">
+						<p class="font-semibold text-lg pr-4 overflow-ellipsis overflow-hidden whitespace-nowrap">
+							{ p.name }
+						</p>
+						<p class="text-sm font-light">
+							{ p.year }
+						</p>
+						<div class="absolute duration-300 opacity-0 w-0 right-0 group-hover:opacity-100 group-hover:right-4 top-1/2 -translate-y-1/2 rounded group-hover:w-8 h-8 overflow-hidden bg-priry text-baund flex justify-center text-lg items-center font-extrabold">
+							&gt;
+						</div>
+					</div>
+				</a>
 			).reverse() }
 		</ul>
 	</section>
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
-			<Icons.CodeDesktop class="stroke-primary dark:stroke-darkPrimary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
-			<h2 class="text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl">Technologies</h2>
+			<Icons.CodeDesktop class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<h2 class="text-xl font-bold text-priry md:text-2xl">Technologies</h2>
 		</div>
-		<hr class="line-gradient dark:line-dark-gradient mb-4">
+		<hr class="border-2 border-priry rounded mb-4">
 		<div class="flex flex-wrap gap-2 md:gap-4 md:justify-between">
 			{ techKnowledge.map( (t) =>
-				<div class="border-2 select-none hover:odd:bg-primary hover:even:bg-secondary hover:odd:dark:bg-darkPrimary hover:even:dark:bg-darkSecondary hover:text-white hover:dark:text-black duration-300 p-2 flex-grow text-center rounded text-lg md:text-xl odd:border-primary even:border-secondary odd:dark:border-darkPrimary even:dark:border-darkSecondary">
+				<div class="border-2 select-none hover:odd:bg-priry hover:even:bg-sery hover:text-white hover:dark:text-black duration-300 p-2 flex-grow text-center rounded text-lg md:text-xl odd:border-priry even:border-sery">
 					{ t }
 				</div>
 			) }
 		</div>
 	</section>
 
-	<section class="my-10 p-1 bg-gradient dark:bg-dark-gradient rounded">
-		<details class="bg-white dark:bg-black rounded">
+	<section class="my-10 p-1 border-2 border-priry rounded">
+		<details>
 			<summary class="p-2 flex justify-between items-center cursor-pointer">
-				<span class="block text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl select-none">Others</span>
+				<span class="block text-xl font-bold text-priry md:text-2xl select-none">Others</span>
 				<span class="otherArrow">
-					<Icons.ArrowDown class="stroke-secondary dark:stroke-darkSecondary w-[25px] h-[25px] md:w-[35px] md:h-[35px]" strokeWidth={ 3 } />
+					<Icons.ArrowDown class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" strokeWidth={ 3 } />
 				</span>
 			</summary>
 			<div class="p-2 rounded-b">
@@ -207,25 +181,26 @@
 
 	<section id="contact-area" class="mb-10 space-y-4 focus:border-2 focus:border-black">
         <div>
-            <h1 class="text-4xl md:text-5xl font-bold text-primary dark:text-darkPrimary">
+            <h1 class="text-4xl md:text-5xl font-bold text-priry">
                 Let's talk!
             </h1>
-            <p class="text-lg md:text-xl text-secondary dark:text-darkSecondary font-semibold">
+            <p class="text-lg md:text-xl font-semibold">
                 Do you want to ask me something or want to work with me?
                 <br>
                 Hit me with a message on any of my socials! 
             </p>
         </div>
         <div>
-            <h2 class="inline-block text-xl font-bold text-gradient dark:text-dark-gradient md:text-2xl mb-2">
+            <h2 class="inline-block text-xl font-bold text-priry md:text-2xl mb-2">
                 You can find me in
             </h2>
-            <div class="grid grid-flow-row md:grid-flow-col gap-4 md:grid-cols-3">
-                { contactsLinks.map((link) =>
-                    <a class="flex space-x-4 items-center text-base md:text-lg underline md:no-underline md:hover:underline" href={link.href} target="_blank">
-                        <link.icon class="fill-black dark:fill-white w-[25px] h-[25px] md:w-[30px] md:h-[30px]" />
-                        <p>{link.text}</p>
-                    </a>
+            <div class="grid gap-4 grid-flow-row sm:grid-cols-2 md:grid-flow-col md:grid-cols-3">
+                { Object.values(SocialsHyperlinks).map((hl) =>
+                    hl.name !== "GitHub" &&
+					(<a class="flex space-x-4 items-center text-base md:text-lg underline md:no-underline md:hover:underline" href={ hl.url } target="_blank">
+                        <SimpleIconWrapper classes="fill-black dark:fill-white w-[25px] h-[25px] md:w-[30px] md:h-[30px]" icon={ hl.icon } />
+                        <p>{hl.display_text}</p>
+                    </a>)
                 ) }
             </div>
         </div>

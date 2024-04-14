@@ -1,20 +1,20 @@
 ---
 	import { Navbar } from "../components/Navbar/";
-	import type { TabsIDs } from "../components/Navbar/";
+	import type { TabsIDsKeys } from "../components/Navbar/";
 	import { Footer } from "../components/Footer/";
 	import "../styles.css";
 
 
 	interface Props {
 		title: string;
-		activeTabID?: TabsIDs;
+		activeTabID?: TabsIDsKeys;
 	}
 
 	const { title, activeTabID } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="classic_dark" lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -47,7 +47,7 @@
 			}
 		</script>
 	</head>
-	<body class="bg-white text-black dark:bg-black dark:text-white p-4 md:px-0 md:w-[750px] md:m-auto">
+	<body class="bg-baund text-xetx p-4 md:px-0 md:w-[750px] md:m-auto">
 		<Navbar activeID={ activeTabID } />
 		<main>
 			<slot />

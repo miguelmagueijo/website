@@ -25,6 +25,10 @@ module.exports = {
 				"secondary3": "#551B8D",
 				"black": "#121212",
 				"pureBlack": "#000000",
+				"priry": "rgba(var(--color-priry), <alpha-value>)",
+				"sery": "rgb(var(--color-sery), <alpha-value>)",
+				"baund": "rgb(var(--color-baund), <alpha-value>)",
+				"xetx": "rgb(var(--color-xetx), <alpha-value>)",
 			},
 			padding: {
 				"0.5": "0.125rem",

@@ -1,11 +1,5 @@
 import type { Icons } from "../../svgs"
-
-export interface ContactLink {
-    href: string,
-    text: string,
-    title: string,
-    icon: typeof Icons[keyof typeof Icons]
-}
+import type { SimpleIcon } from "simple-icons"
 
 export interface PageLink {
     href: string,
