@@ -12,5 +12,8 @@
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.6.1"
+  },
+  "dependencies": {
+    "simple-icons": "^11.12.0"
   }
 }
