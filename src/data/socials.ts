@@ -18,7 +18,7 @@ export type SocialsHyperlinks = {
 
 export const SocialsHyperlinks = {
     x: {
-        url: "https://x.com/",
+        url: "https://x.com/miguelmagueijo",
         name: "X",
         display_text: "@miguelmagueijo",
         hyper_title: "Miguel Magueijo X profile",

@@ -9,7 +9,7 @@
 
     const { activeID } = Astro.props as Props;
 ---
-<nav>
+<nav id="navbar">
     <div class="hidden md:flex justify-between items-center">
         <a class="block w-[50px]" href="/">
             <img src="/Logo/MCrown_Classic_Dark.svg" />
@@ -31,6 +31,20 @@
 </nav>
 
 <script is:inline>
+    const navbar = document.getElementById("navbar");
+
+    if (typeof navbar === "object") {
+        window.onscroll = () => {
+            console.log(document.body.scrollTop, window.scrollY);
+    
+            if (window.scrollY > 30) {
+                navbar.classList.add("active");
+            } else {
+                navbar.classList.remove("active");
+            }
+        }
+    }
+
     function changeTheme(event) {
         document.documentElement.classList.toggle("dark");
         localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
@@ -68,10 +82,17 @@
 
 <style>
     nav {
-        @apply w-full rounded top-4 z-50;
+        @apply rounded top-4 z-50 border-2 py-4;
         position: sticky;
         overflow: hidden;
-        backdrop-filter: blur(1px);
+        /* backdrop-filter: blur(1px); */
+        transition-duration: 300ms;
+        border-color: transparent;
+        width: 100%;
+    }
+
+    nav.active {
+        @apply px-4 m-0 bg-baund/95 border-2 border-priry/30;
     }
 
     .theme-btn {
