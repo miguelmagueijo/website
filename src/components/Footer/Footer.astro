@@ -23,10 +23,10 @@
         },
     ];
 ---
-<footer>
+<footer class="border-t-2 border-priry/30 bg-priry/5 mt-32">
     <!-- Mobile Menu -->
-    <div class="border-2 border-priry/25 bg-priry/10 rounded p-4 block sm:hidden">
-        <img class="w-16 mx-auto mb-4" src="/Logo/MCrown_Classic_Dark.svg" title="Miguel Magueijo Logo" alt="Miguel Magueijo Logo" />
+    <div class="rounded py-6 block md:hidden">
+        <img class="w-16 mx-auto mb-4" src="/Logo/MCrown_Classic_Dark.svg" title="Miguel Magueijo Logo" alt="Miguel Magueijo Logo" loading="lazy" />
         <h3 class="font-bold text-xl text-center">
             Links
         </h3>
@@ -51,12 +51,12 @@
                 </li>
             ) }
         </ul>
-        <hr class="my-4 rounded border-2 border-priry/25">
+        <hr class="my-6 rounded border-2 border-priry/25 w-4/5 mx-auto">
         <p class="text-center">Miguel Magueijo © {currentYear}</p>
         <a class="block text-center underline mt-2" href="https://github.com/miguelmagueijo/website" target="_blank" rel="noopener noreferrer" title="Website source code hyperlink">Source Code</a>
     </div>
     <!-- Desktop Menu -->
-    <div class="border-2 border-priry/30 bg-priry/5 w-full p-4 rounded text-white hidden sm:block">
+    <div class="w-full p-4 rounded text-white hidden md:block md:mx-auto md:w-[750px]">
         <div class="grid gap-4 grid-cols-2 grid-rows-1">
             <div>
                 <h3 class="font-bold text-lg text-sery">
@@ -92,7 +92,7 @@
         <hr class="my-4 rounded border-2 border-priry/30">
         <div class="text-sm grid grid-cols-3">
             <div class="flex gap-2 items-center">
-                <img class="w-6" src="/Logo/MCrown_Classic_Dark.svg" title="Miguel Magueijo Logo" alt="Miguel Magueijo Logo" />
+                <img class="w-6" src="/Logo/MCrown_Classic_Dark.svg" title="Miguel Magueijo Logo" alt="Miguel Magueijo Logo" loading="lazy" />
                 <p>Miguel Magueijo © {currentYear}</p>
             </div>
             <div class="flex justify-center">

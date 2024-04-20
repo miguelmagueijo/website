@@ -9,8 +9,8 @@
 
     const { activeID } = Astro.props as Props;
 ---
-<nav id="navbar">
-    <div class="hidden md:flex justify-between items-center">
+<nav id="navbar-group">
+    <div id="navbar-desktop" class="hidden md:flex justify-between items-center">
         <a class="block w-[50px]" href="/">
             <img src="/Logo/MCrown_Classic_Dark.svg" />
         </a>
@@ -19,29 +19,30 @@
             <span id="themeBtn" class="theme-btn"></span>
         </div> -->
     </div>
-    <div class="block md:hidden">
-        <div class="flex items-center justify-between">
-            <Icons.HambugerMenu class="menu-btn-mobile stroke-white border border-white rounded [&.active]:bg-white [&.active]:stroke-primary dark:[&.active]:stroke-darkPrimary" width="30px" height="30px" />
-            <div>
-                <span id="themeBtnMobile" class="theme-btn"></span>
+    <div id="navbar-mobile" class="block md:hidden duration-300">
+        <div class="flex justify-between px-4">
+            <a class="block w-[50px]" href="/">
+                <img src="/Logo/MCrown_Classic_Dark.svg" />
+            </a>
+            <div class="flex items-center justify-between">
+                <Icons.HambugerMenu class="menu-btn-mobile stroke-sery duration-300 rounded [&.active]:bg-priry/20 [&.active]:stroke-priry" width="30px" height="30px" />
+                <!-- <div>
+                    <span id="themeBtnMobile" class="theme-btn"></span>
+                </div> -->
             </div>
         </div>
-        <PagesLinks id="mobile-menu" className="hidden mt-6 space-y-2" activeID={ activeID } />
+        <PagesLinks id="mobile-menu" className="hidden mt-6 space-y-2 w-fit mx-auto" activeID={ activeID } />
     </div>
 </nav>
 
 <script is:inline>
-    const navbar = document.getElementById("navbar");
+    const navbar = document.getElementById("navbar-group");
 
-    if (typeof navbar === "object") {
-        window.onscroll = () => {
-            console.log(document.body.scrollTop, window.scrollY);
-    
-            if (window.scrollY > 30) {
-                navbar.classList.add("active");
-            } else {
-                navbar.classList.remove("active");
-            }
+    window.onscroll = () => {
+        if (window.scrollY > 30) {
+            navbar.classList.add("compact");
+        } else {
+            navbar.classList.remove("compact");
         }
     }
 
@@ -62,16 +63,16 @@
 
     const mobileMenuBtn = document.querySelector(".menu-btn-mobile");
     const mobileMenu = document.getElementById("mobile-menu");
-    const themeBtnDesktop = document.getElementById("themeBtn");
-    const themeBtnMobile = document.getElementById("themeBtnMobile");
+    // const themeBtnDesktop = document.getElementById("themeBtn");
+    // const themeBtnMobile = document.getElementById("themeBtnMobile");
 
-    if (document.documentElement.classList.contains("dark")) {
-        themeBtnDesktop.classList.add("active");
-        themeBtnMobile.classList.add("active");
-    }
+    // if (document.documentElement.classList.contains("dark")) {
+    //     themeBtnDesktop.classList.add("active");
+    //     themeBtnMobile.classList.add("active");
+    // }
 
-    themeBtnDesktop.addEventListener("click", changeTheme);
-    themeBtnMobile.addEventListener("click", changeTheme);
+    // themeBtnDesktop.addEventListener("click", changeTheme);
+    // themeBtnMobile.addEventListener("click", changeTheme);
 
 
     mobileMenuBtn.addEventListener("click", () => {
@@ -82,7 +83,7 @@
 
 <style>
     nav {
-        @apply rounded top-4 z-50 border-2 py-4;
+        @apply top-0 z-50 border-b-2 py-4;
         position: sticky;
         overflow: hidden;
         /* backdrop-filter: blur(1px); */
@@ -91,8 +92,22 @@
         width: 100%;
     }
 
-    nav.active {
-        @apply px-4 m-0 bg-baund/95 border-2 border-priry/30;
+    nav.compact {
+        @apply bg-baund/95 border-priry/30;
+    }
+
+    #navbar-desktop {
+        width: 750px;
+        margin: 0 auto;
+        transition-duration: 300ms;
+    }
+
+    nav.compact #navbar-desktop {
+        @apply px-4 pt-2;
+    }
+
+    nav.compact #navbar-mobile {
+        @apply pt-1 px-2;
     }
 
     .theme-btn {

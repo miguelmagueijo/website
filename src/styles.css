@@ -6,11 +6,13 @@
 @font-face {
     font-family: Catamaran;
     src: url("/Fonts/Catamaran/Catamaran_VariableFont_wght.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: Quicksand;
     src: url("/Fonts/QuickSand/Quicksand-VariableFont_wght.ttf");
+    font-display: fallback;
 }
 
 * {
