@@ -7,11 +7,13 @@
 	import { projects as ProjectsInfos } from "../data/projects";
 	import { SimpleIconWrapper } from "../components/SimpleIconWrapper/";
 	import { SocialsHyperlinks } from "../data/socials";
-
+	
 	const techKnowledge = ["Java", "Python", "Javascript", "Typescript", 
-							"PHP", "HTML", "CSS", "MySQL",
-							"Microsoft SQL Server", "Node.js", "AstroJS",
-							"Tailwind CSS", "Git", "VS Code"];
+	"PHP", "HTML", "CSS", "SQL", "Node.js", "AstroJS",
+	"Tailwind CSS", "Git", "Svelte", "Scikit-Learn"];
+	
+	//import { siPython, siJavascript, siTypescript, siPhp, siHtml5, siCss3, siNodedotjs, siAstro, siTailwindcss, siGit, siSvelte, siScikitlearn } from "simple-icons";
+	//const techKnowledgeIcons = [siPython, siJavascript, siTypescript, siSvelte, siScikitlearn, siNodedotjs, siPhp, siHtml5, siCss3, siAstro, siTailwindcss, siGit]
 ---
 
 <Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.Home }>
@@ -133,9 +135,10 @@
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Technologies</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
-		<div class="flex flex-wrap gap-2 md:gap-4 md:justify-between">
+		<div class="flex flex-wrap gap-4">
 			{ techKnowledge.map( (t) =>
-				<div class="border-2 select-none hover:odd:bg-priry hover:even:bg-sery hover:text-white hover:dark:text-black duration-300 p-2 flex-grow text-center rounded text-lg md:text-xl odd:border-priry even:border-sery">
+				//<SimpleIconWrapper icon={t} classes="w-10 fill-sery duration-300" fillColorOnHover={true} />
+				<div class="border-2 flex flex-col justify-center font-medium select-none hover:odd:bg-priry hover:even:bg-sery hover:text-baund duration-300 p-2 text-center rounded odd:border-priry even:border-sery">
 					{ t }
 				</div>
 			) }
@@ -154,25 +157,25 @@
 				<h3 class="font-bold text-lg md:text-xl">Areas of interest</h3>
 				<ul class="list-disc list-inside">
 					<li>Artificial Intelligence</li>
+					<li>Backend development</li>
+					<li>Optimizing software</li>
 					<li>Databases</li>
-					<li>Fantasy Stories and Worlds</li>
+					<li>Fantasy stories and worlds</li>
 					<li>Gaming & Game Development</li>
 				</ul>
-				<h3 class="mt-5 font-bold text-lg md:text-xl">Technologies I've been using/trying</h3>
-				<ul class="list-disc list-inside">
-					<li>Svelte & SvelteKit</li>
+				<h3 class="mt-5 font-bold text-lg md:text-xl">Technologies I've been using recently</h3>
+				<ol class="list-decimal list-inside">
 					<li>Scikit-Learn</li>
+					<li>Go</li>
+					<li>Svelte</li>
 					<li>Docker</li>
-					<small>Fun fact: this website is made with Astro & Tailwind</small>
-				</ul>
-				<h3 class="mt-5 font-bold text-lg md:text-xl">I want to learn</h3>
-				<ul class="list-disc list-inside">
-					<li>Artificial Intelligence</li>
-					<li>Machine Learning</li>
-					<li>Data Analysis</li>
-					<li>Rust</li>
-					<li>Game Development (Godot/Unreal)</li>
-				</ul>
+				</ol>
+				<small class="opacity-50"><b>Fun fact</b>: this website is made with Astro & Tailwind</small>
+				<h3 class="mt-5 font-bold text-lg md:text-xl">Open to work and learn new stuff!</h3>
+				<p>
+					If you got an idea just shoot me a message on any of my socials and we can get to work on it!<br>
+					I also have some projects ideas, if you want to co-create something with me just contact me already!<br>
+				</p>
 			</div>
 		</details>
 	</section>

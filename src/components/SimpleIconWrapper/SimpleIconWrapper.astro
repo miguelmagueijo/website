@@ -3,12 +3,30 @@
 
     interface Props {
         classes?: string;
+        fillColorOnHover?: boolean;
         icon: SimpleIcon;
     }
 
-    const { classes, icon } = Astro.props;
+    let { classes = "", icon, fillColorOnHover = false } = Astro.props;
+    const iconColor = "#" + icon.hex;
+
+    if (typeof classes !== "string") {
+        classes = "";
+    }
+    
+
+    if (fillColorOnHover) {
+        classes += ` fill-own-color`;
+    }
 ---
 <svg class={ classes } role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <title>{icon.title}</title>
     <path d={icon.path}/>
 </svg>
+
+<style define:vars={{ iconColor }}>
+    .fill-own-color:hover {
+        fill: var(--iconColor) !important;
+
+    }
+</style>
