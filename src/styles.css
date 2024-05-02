@@ -1,12 +1,22 @@
+@tailwind base;
 @tailwind components;
+
+/* https://stackoverflow.com/questions/69150928/how-to-create-multiple-themes-using-tailwind-css */
 
 @font-face {
     font-family: Catamaran;
-    src: url("/Fonts/Catamaran_VariableFont_wght.ttf");
+    src: url("/Fonts/Catamaran/Catamaran_VariableFont_wght.ttf");
+    font-display: block;
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url("/Fonts/QuickSand/Quicksand-VariableFont_wght.ttf");
+    font-display: fallback;
 }
 
 * {
-    font-family: Catamaran, Arial, sans-serif;
+    font-family: Quicksand, Catamaran, Arial, sans-serif;
 }
 
 details summary {
@@ -17,9 +27,39 @@ details summary::-webkit-details-marker {
     display: none;
 }
 
+@layer base {
+    html[data-theme="dark"] {
+        --color-priry: 138, 43, 226;
+        --color-sery: 86, 255, 245;
+        --color-baund: 19, 9, 36;
+        --color-xetx: 255, 255, 255;
+    }
+
+    html[data-theme="light"] {
+        --color-priry: 138, 43, 226;
+        --color-sery: 86, 255, 245;
+        --color-baund: 19, 9, 36;
+        --color-xetx: 255, 255, 255;
+    }
+
+    html[data-theme="classic_dark"] {
+        --color-priry: 255, 189, 114;
+        --color-sery: 252, 245, 237;
+        --color-baund: 26, 19, 19;
+        --color-xetx: 252, 245, 237;
+    }
+
+    html[data-theme="classic_light"] {
+        --color-priry: 31, 23, 23;
+        --color-sery: 152, 152, 152;
+        --color-baund: 252, 245, 237;
+        --color-xetx: 255, 255, 255;
+    }
+}
+
 @layer components {
     .bg-gradient {
-        @apply bg-gradient-to-r from-primary to-secondary;
+        @apply bg-gradient-to-r from-priry to-sery;
     }
     
     .bg-gradient-a {

@@ -1,0 +1,36 @@
+---
+import { TabsIDs } from "../components/Navbar";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="ForgedIn.Space - Coming soon!" activeTabID={ TabsIDs.Fis }>
+    <section class="mt-12">
+        <h1 class="font-bold text-5xl text-priry">Updates</h1>
+        <p class="mt-4 text-justify">
+            I see you discovered the updates page!
+            <br>
+            In this page you can find all the updates I've done so far and the upcoming ones too.
+            It also helps me keep track of things and see the evolution of the website.
+        </p>
+        <h2 class="mt-5 text-2xl font-bold">
+            Upcoming
+        </h2>
+        <ul class="list-disc list-inside mt-4">
+            <li>
+                Brand page;
+            </li>
+            <li>
+                Blog;
+            </li>
+            <li>
+                Projects catalog;
+            </li>
+        </ul>
+        <h2 class="mt-5 text-2xl font-bold">
+            Pushed
+        </h2>
+        <div class="mt-4">
+            No updates have been pushed yet.
+        </div>
+    </section>
+</Layout>
