@@ -4,6 +4,9 @@
     import { SimpleIconWrapper } from "../SimpleIconWrapper";
     import { siGithub } from "simple-icons";
 
+    import { Image } from "astro:assets";
+    import MMLogo from "../../../public/Logo/MCrown_Classic_Dark.svg";
+
     const currentYear = new Date().getFullYear();
 
     const websiteHyperlinks: Array<PageLink> = [
@@ -94,7 +97,7 @@
         <hr class="my-4 rounded border-2 border-priry/30">
         <div class="text-sm grid grid-cols-3">
             <div class="flex gap-2 items-center">
-                <img class="w-6" src="/Logo/MCrown_Classic_Dark.svg" title="Miguel Magueijo Logo" alt="Miguel Magueijo Logo" loading="lazy" />
+                <Image class="w-6" src={MMLogo} alt="Miguel Magueijo Logo" loading="lazy" decoding="async" />
                 <p>Miguel Magueijo © {currentYear}</p>
             </div>
             <div class="flex justify-center">
