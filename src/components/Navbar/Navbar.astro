@@ -2,6 +2,9 @@
     import { Icons } from "../../svgs";
     import PagesLinks from "./PagesLinks.astro";
     import type { TabsIDsKeys } from "./";
+    
+    import { Image } from "astro:assets";
+    import MMLogo from "../../../public/Logo/MCrown_Classic_Dark.svg";
 
     interface Props {
         activeID?: TabsIDsKeys
@@ -12,7 +15,7 @@
 <nav id="navbar-group">
     <div id="navbar-desktop" class="hidden md:flex justify-between items-center">
         <a class="block w-[50px]" href="/">
-            <img src="/Logo/MCrown_Classic_Dark.svg" />
+            <Image src={MMLogo} alt="Miguel Magueijo Logo" loading="eager" />
         </a>
         <PagesLinks className="md:flex space-x-4 items-center md:text-lg" activeID={ activeID } />
         <!-- <div class="text-right">
@@ -22,7 +25,7 @@
     <div id="navbar-mobile" class="block md:hidden duration-300">
         <div class="flex justify-between px-4">
             <a class="block w-[50px]" href="/">
-                <img src="/Logo/MCrown_Classic_Dark.svg" />
+                <Image src={MMLogo} alt="Miguel Magueijo Logo" loading="eager" />
             </a>
             <div class="flex items-center justify-between">
                 <Icons.HambugerMenu class="menu-btn-mobile stroke-sery duration-300 rounded [&.active]:bg-priry/20 [&.active]:stroke-priry" width="30px" height="30px" />

@@ -1,0 +1,122 @@
+---
+    import Layout from "../layouts/Layout.astro";
+    
+    import { Image } from "astro:assets";
+    import FirstLogoStoryBoard from "../../public/brand/first_storyboard.png";
+    import FirstLogoDesign from "../../public/brand/first_design.png";
+    import TO_LogoConcept from "../../public/brand/tiago_concept.png";
+    import FirstLogoIdeaInAction from "../../public/brand/first_design_in_practice.png";
+    import LogoConceptCleanup1 from "../../public/brand/concept_clean_up_1.png";
+    import LogoConceptFinal from "../../public/brand/concept_final.png";
+    import LogoColorThemes from "../../public/brand/color_themes.png";
+
+    const tiagoBehanceUrl = "https://www.behance.net/BlkouTT";
+---
+
+<Layout title="Brand">
+    <section class="mt-12">
+        <h1 class="font-bold text-5xl text-priry">My branding</h1>
+        <p class="md:text-lg">
+            The Miguel Magueijo brand came to life on April 13th of 2024. It all started with a chat between two friends, Miguel Magueijo and <a href={tiagoBehanceUrl} class="font-bold underline" target="_blank">Tiago Oliveira</a>, about a logo concept.
+            <br>
+            Originally, the idea was to create a logo with two stacked M's, with a bit of an angle to give a style to it.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <figure>
+                <Image src={FirstLogoStoryBoard} alt="Miguel Magueijo first logo storyboard (idea)" loading="eager" />
+                <figcaption>
+                    Miguel Magueijo first logo storyboard (idea)
+                </figcaption>
+            </figure>
+            <figure>
+                <Image src={FirstLogoDesign} alt="Tiago Oliveira logo design based on the storyboard" loading="eager" />
+                <figcaption>
+                    Tiago Oliveira logo design based on the storyboard
+                </figcaption>
+            </figure>
+        </div>
+        <p class="md:text-lg">
+            After both Miguel and Tiago took a good look at the logo, it became evident that the initial idea wasn't quite hitting the mark. It seemed like it might be a bit tricky for people to figure out what exactly the logo was all about.
+            <br>
+            But then, in the blink of an eye, inspiration struck Tiago. He whipped up a whole new logo in just minutes and shot it over to Miguel.
+        </p>
+        <figure>
+            <Image src={TO_LogoConcept} alt="Tiago Oliveira new logo design proposition" loading="eager" />
+            <figcaption>
+                Tiago Oliveira new logo design proposition
+            </figcaption>
+        </figure>
+        <p class="md:text-lg">
+            At first glance, Miguel was a bit skeptical about the new design since it resemblance a crown. However, with each passing glance, Miguel's skepticism gradually transformed into approval. What won him over was its simplicity and immediate clarity.
+            <br>
+            As Miguel and Tiago continued to discuss the logo, they couldn't resist comparing it to the original concept.
+        </p>
+        <figure>
+            <Image src={FirstLogoIdeaInAction} alt="First logo idea design in practice" loading="lazy" decoding="async" />
+            <figcaption>
+                First logo idea design in practice
+            </figcaption>
+        </figure>
+        <p class="md:text-lg">
+            The comparison between Tiago's proposed logo and the original left no doubt: Tiago's design was the winner. With that settled, Miguel and Tiago set out to enhance it further.
+            <br>
+            They agreed to adjust the underline to match the width and thickness of the M letters, as depicted in the left image below.
+            <br>
+            But it didn't stop there. Miguel felt strongly about incorporating two colors into the logo, not just one for the M's and underline. So, they brainstormed and came up with the idea of adding a cut between the two M's, allowing for the introduction of two distinct colors. The result is shown in the right image below.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <figure>
+                <Image src={LogoConceptCleanup1} alt="Changes to underline width and thickness" loading="lazy" decoding="async" />
+                <figcaption>
+                    Changes to underline width and thickness
+                </figcaption>
+            </figure>
+            <figure>
+                <Image src={LogoConceptFinal} alt="Cut between both M's that distinguish both letters" loading="lazy" decoding="async" />
+                <figcaption>
+                    Cut between both M's that distinguish both letters
+                </figcaption>
+            </figure>
+        </div>
+        <p class="md:text-lg">
+            Once the cut was introduced, it was as clear as day that their objective had been achieved. All that remained was to settle on the colors for the new logo.
+            <br>
+            With the help of Figma app, they created several color themes to explore and experiment with.
+        </p>
+        <figure>
+            <Image src={LogoColorThemes} alt="Logo color themes created in a first iteration" loading="lazy" decoding="async" />
+            <figcaption>
+                Logo color themes created in a first iteration
+            </figcaption>
+        </figure>
+        <p class="md:text-lg">
+            After finalizing multiple color themes, it was time to implement the changes and officially adopt this new "brand" on the website. Thus, what you're currently seeing as the website's brand is a simple idea that has its origins from a conversation between two friends discussing a logo concept.
+        </p>
+        <h2 class="text-3xl text-priry font-bold mt-10">
+            Special thanks
+        </h2>
+        <p class="md:text-lg">
+            Big thanks to Tiago Oliveira for helping bring my new logo to life! He took my initial idea and ran with it, even offering up an awesome alternative design that ended up being the winner.
+            <br>
+            If you're digging this logo as much as I am, check out Tiago Oliveira's work on <a href={tiagoBehanceUrl} class="font-bold underline" target="_blank">Behance</a>. Hit him up for logo design or any other cool projects you've got in mind!
+            <br><br>
+            And hey, there's also a cool <a href="https://www.behance.net/gallery/196623011/Miguel-Magueijo-Logo-Design" class="font-bold underline" target="_blank">post about this brand</a> on his Behance profile.
+        </p>
+    </section>
+</Layout>
+
+<style>
+    img {
+        @apply rounded mx-auto mt-4;
+    }
+
+    p {
+        @apply mt-4;
+        text-align: justify;
+    }
+
+    figcaption {
+        @apply text-sm;
+        text-align: center;
+    }
+</style>
