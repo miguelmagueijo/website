@@ -6,6 +6,9 @@ If you have any questions feel free to ask them! You can contact me via my socia
 <br>
 Happy coding!
 
+## Special thanks
+- [Tiago Oliveira](https://www.behance.net/BlkouTT) for designing and helping out with the new MM logo.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
