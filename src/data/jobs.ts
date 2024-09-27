@@ -29,5 +29,15 @@ export const jobs: Array<JobInfo> = [
         positionName: "Curricular internship",
         start: "Mar 2021",
         end: "Jul 2021"
+    },
+    {
+        imgUrl: "/3rdParty/digitalis.jpg",
+        imgAlt: "Digitalis Logo",
+        imgTitle: "Digitalis",
+        jobName: "Full-stack Web Developer",
+        companyName: "Digitalis",
+        positionName: "Junior developer",
+        start: "Jul 2024",
+        end: ""
     }
 ];
