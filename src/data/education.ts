@@ -21,7 +21,7 @@ export const studies: Array<EducationInfo> = [
         end: "Jul 2019"
     },
     {
-        imgUrl: "/3rdParty/ipcb_estcb.svg",
+        imgUrl: "/3rdParty/ipcb_new.svg",
         imgAlt: "IPCB - Escola Superior de Tecnologia Logo",
         imgTitle: "IPCB - Escola Superior de Tecnologia",
         schoolName: "Instituto Politécnico de Castelo Branco",
@@ -31,13 +31,13 @@ export const studies: Array<EducationInfo> = [
         end: "Jul 2021"
     },
     {
-        imgUrl: "/3rdParty/ipcb_estcb.svg",
+        imgUrl: "/3rdParty/ipcb_new.svg",
         imgAlt: "IPCB - Escola Superior de Tecnologia Logo",
         imgTitle: "IPCB - Escola Superior de Tecnologia",
         schoolName: "Instituto Politécnico de Castelo Branco",
         courseName: "Computer Science and Multimedia",
         degree: "Bachelor",
         start: "Sep 2021",
-        end: ""
+        end: "Sep 2024"
     }
 ];

@@ -12,9 +12,8 @@
 	import Image from "astro/components/Image.astro";
 	import MeImage from "../../public/me.png";
 	
-	const techKnowledge = ["Java", "Python", "Javascript", "Typescript", 
-							"PHP", "HTML", "CSS", "SQL", "Node.js", "AstroJS",
-							"Tailwind CSS", "Git", "Svelte", "Scikit-Learn"];
+	const techKnowledge = ["Java", "Python", "Javascript", "Typescript", "PHP", "HTML", "CSS", "SQL", "Node.js",
+		                           "Tailwind CSS", "Git", "Svelte", "Scikit-Learn"];
 	
 	//import { siPython, siJavascript, siTypescript, siPhp, siHtml5, siCss3, siNodedotjs, siAstro, siTailwindcss, siGit, siSvelte, siScikitlearn } from "simple-icons";
 	//const techKnowledgeIcons = [siPython, siJavascript, siTypescript, siSvelte, siScikitlearn, siNodedotjs, siPhp, siHtml5, siCss3, siAstro, siTailwindcss, siGit]
@@ -41,7 +40,7 @@
 				Hi 👋<br>I'm <b class="text-priry">Miguel Magueijo</b> from Portugal 🇵🇹
 			</p>
 			<p class="mt-4 md:text-lg">
-				At the moment, I am a student at IPCB (Instituto Politécnico de Castelo Branco) and I study Computer Science and Multimedia (Informática e Multimédia).
+				As of today, I'm a web developer at Digitalis, where I help integrate Machine Learning solutions and contribute to enhancing existing web applications.
 			</p>
 			<p class="mt-1 md:text-lg">
 				One of my favorite hobbies is programming, and sometimes I challenge myself to try to develop my own versions of apps with improvements that I think are needed or develop simple apps that come to my mind in random moments.
@@ -65,6 +64,27 @@
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
+			<Icons.Suitcase class=" stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<h2 class="text-xl font-bold text-priry md:text-2xl">Work experience</h2>
+		</div>
+		<hr class="border-2 border-priry rounded mb-4">
+		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
+			{ JobsInfos.map( (j) =>
+				<li class="grid grid-cols-5 gap-4">
+					<img class="logo-image" src={ j.imgUrl } alt={ j.imgAlt } title={ j.imgTitle } />
+					<div class="text-sm col-span-4">
+						<p class="font-bold text-lg md:text-xl">{ j.jobName }</p>
+						<p class="font-semibold">{ j.companyName }</p>
+						<p>{ j.positionName }</p>
+						<p>{ j.start } - { j.end }</p>
+					</div>
+				</li>
+			).reverse() }
+		</ul>
+	</section>
+
+	<section class="my-10">
+		<div class="flex space-x-2 items-center">
 			<Icons.User class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Education</h2>
 		</div>
@@ -78,27 +98,6 @@
 						<p class="font-semibold">{ s.schoolName }</p>
 						<p>{ s.degree }</p>
 						<p>{ s.start } - { s.end }</p>
-					</div>
-				</li>
-			).reverse() }
-		</ul>
-	</section>
-
-	<section class="my-10">
-		<div class="flex space-x-2 items-center">
-			<Icons.Suitcase class=" stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
-			<h2 class="text-xl font-bold text-priry md:text-2xl">Work experience</h2>
-		</div>
-		<hr class="border-2 border-priry rounded mb-4">
-		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
-			{ JobsInfos.map( (j) => 
-				<li class="grid grid-cols-5 gap-4">
-					<img class="logo-image" src={ j.imgUrl } alt={ j.imgAlt } title={ j.imgTitle } />
-					<div class="text-sm col-span-4">
-						<p class="font-bold text-lg md:text-xl">{ j.jobName }</p>
-						<p class="font-semibold">{ j.companyName }</p>
-						<p>{ j.positionName }</p>
-						<p>{ j.start } - { j.end }</p>
 					</div>
 				</li>
 			).reverse() }

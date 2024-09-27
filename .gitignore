@@ -21,3 +21,5 @@ pnpm-debug.log*
 
 # Others
 src/svgs/raw
+
+.idea/
