@@ -13,7 +13,7 @@
 	import MeImage from "../../public/me.png";
 	
 	const techKnowledge = ["Java", "Python", "Javascript", "Typescript", "PHP", "HTML", "CSS", "SQL", "Node.js",
-		                           "Tailwind CSS", "Git", "Svelte", "Scikit-Learn"];
+							"Tailwind CSS", "Git", "Svelte", "Scikit-Learn"];
 	
 	//import { siPython, siJavascript, siTypescript, siPhp, siHtml5, siCss3, siNodedotjs, siAstro, siTailwindcss, siGit, siSvelte, siScikitlearn } from "simple-icons";
 	//const techKnowledgeIcons = [siPython, siJavascript, siTypescript, siSvelte, siScikitlearn, siNodedotjs, siPhp, siHtml5, siCss3, siAstro, siTailwindcss, siGit]
@@ -109,7 +109,7 @@
 		<hr class="border-2 border-priry rounded mb-4">
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
 			{ ProjectsInfos.map( (p) =>
-				<a href="#" class="group flex gap-2 items-center border-2 rounded border-priry/25 bg-priry/5">
+				<a href="#" class="group flex gap-2 items-center border-2 rounded border-priry/25 bg-priry/5 pointer-events-none">
 					<div class="w-1/5 p-3 bg-white/5 h-full">
 						<img class="h-full" src={ p.imgUrl } alt={ p.imgAlt } title={ p.imgTitle } />
 					</div>
