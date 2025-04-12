@@ -1,22 +1,18 @@
 ---
 	import { TabsIDs } from "../components/Navbar/";
 	import Layout from "../layouts/Layout.astro";
-	import { Icons } from "../svgs/";
 	import { studies as StudiesInfos } from "../data/education";
 	import { jobs as JobsInfos } from "../data/jobs";
 	import { projects as ProjectsInfos } from "../data/projects";
-	import { SimpleIconWrapper } from "../components/SimpleIconWrapper/";
 	import { SocialsHyperlinks } from "../data/socials";
 	import { version as WebsiteVersion  } from "../../package.json";
+	import { Icon } from 'astro-icon/components'
 
 	import Image from "astro/components/Image.astro";
 	import MeImage from "../../public/me.png";
 	
 	const techKnowledge = ["Java", "Python", "Javascript", "Typescript", "PHP", "HTML", "CSS", "SQL", "Node.js",
 							"Tailwind CSS", "Git", "Svelte", "Scikit-Learn"];
-	
-	//import { siPython, siJavascript, siTypescript, siPhp, siHtml5, siCss3, siNodedotjs, siAstro, siTailwindcss, siGit, siSvelte, siScikitlearn } from "simple-icons";
-	//const techKnowledgeIcons = [siPython, siJavascript, siTypescript, siSvelte, siScikitlearn, siNodedotjs, siPhp, siHtml5, siCss3, siAstro, siTailwindcss, siGit]
 ---
 
 <Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.Home }>
@@ -29,7 +25,7 @@
 				<div class="flex gap-4 mt-4 justify-center md:justify-end">
 					{ Object.values(SocialsHyperlinks).map((hl) =>
 						<a class="group hover:scale-125 duration-300" href={ hl.url } target="_blank" referrerpolicy="no-referrer">
-							<SimpleIconWrapper classes="w-[26px] fill-sery group-hover:fill-priry group-hover:duration-300" icon={ hl.icon } />
+							<Icon class="size-10 fill-sery group-hover:fill-priry group-hover:duration-300" name={ hl.iconName } />
 							</a>
 						) }
 				</div>
@@ -40,13 +36,13 @@
 				Hi 👋<br>I'm <b class="text-priry">Miguel Magueijo</b> from Portugal 🇵🇹
 			</p>
 			<p class="mt-4 md:text-lg">
-				As of today, I'm a web developer at Digitalis, where I help integrate Machine Learning solutions and contribute to enhancing existing web applications.
+				As of today, I'm a web developer at Digitalis, where I help build web applications for managing higher education institutions.
 			</p>
 			<p class="mt-1 md:text-lg">
 				One of my favorite hobbies is programming, and sometimes I challenge myself to try to develop my own versions of apps with improvements that I think are needed or develop simple apps that come to my mind in random moments.
 			</p>
 			<p class="mt-1 md:text-lg">
-				I also love videogames and fantasy worlds, being immersed in games and stories is one of the best things ever!
+				I also love videogames and fantasy worlds. Being immersed in games and stories is one of the best things ever!
 			</p>
 			<hr class="my-4 border-2 rounded opacity-90 dark:opacity-10">
 			<p class="md:text-lg">
@@ -61,7 +57,7 @@
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
-			<Icons.Suitcase class=" stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<Icon name="mdi:briefcase-outline" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Work experience</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
@@ -82,7 +78,7 @@
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
-			<Icons.User class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<Icon name="mdi:education-outline" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Education</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
@@ -103,7 +99,7 @@
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
-			<Icons.Box class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<Icon name="mdi:box-variant-closed" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Projects</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
@@ -131,13 +127,12 @@
 
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
-			<Icons.CodeDesktop class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+			<Icon name="mdi:remote-desktop" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Technologies</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
 		<div class="flex flex-wrap gap-4">
 			{ techKnowledge.map( (t) =>
-				//<SimpleIconWrapper icon={t} classes="w-10 fill-sery duration-300" fillColorOnHover={true} />
 				<div class="border-2 flex flex-col justify-center font-medium select-none hover:odd:bg-priry hover:even:bg-sery hover:text-baund duration-300 p-2 text-center rounded odd:border-priry even:border-sery">
 					{ t }
 				</div>
@@ -150,7 +145,7 @@
 			<summary class="p-2 flex justify-between items-center cursor-pointer">
 				<span class="block text-xl font-bold text-priry md:text-2xl select-none">Others</span>
 				<span class="otherArrow">
-					<Icons.ArrowDown class="stroke-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" strokeWidth={ 3 } />
+					<Icon name="mdi:chevron-down" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
 				</span>
 			</summary>
 			<div class="p-2 rounded-b">
@@ -201,7 +196,7 @@
                 { Object.values(SocialsHyperlinks).map((hl) =>
                     hl.name !== "GitHub" &&
 					(<a class="flex space-x-4 items-center text-base md:text-lg underline md:no-underline md:hover:underline" href={ hl.url } target="_blank">
-                        <SimpleIconWrapper classes="fill-black dark:fill-white w-[25px] h-[25px] md:w-[30px] md:h-[30px]" icon={ hl.icon } />
+						<Icon class="fill-black dark:fill-white size-10" name={ hl.iconName } />
                         <p>{hl.display_text}</p>
                     </a>)
                 ) }
