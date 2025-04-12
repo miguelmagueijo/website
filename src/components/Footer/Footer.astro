@@ -1,8 +1,7 @@
 ---
     import type { PageLink } from "./types";
     import { SocialsHyperlinks } from "../../data/socials";
-    import { SimpleIconWrapper } from "../SimpleIconWrapper";
-    import { siGithub } from "simple-icons";
+    import { Icon } from "astro-icon/components";
 
     import { Image } from "astro:assets";
     import MMLogo from "../../../public/Logo/MCrown_Classic_Dark.svg";
@@ -17,10 +16,6 @@
         {
             href: "/#contact-area",
             text: "Contact",
-        },
-        {
-            href: "/forged-in-space",
-            text: "ForgedIn.Space"
         },
         {
             href: "/brand",
@@ -51,7 +46,7 @@
             { Object.values(SocialsHyperlinks).map((hl) =>
                 <li>
                     <a href={ hl.url } target="_blank" rel="noopener noreferrer" title={ hl.hyper_title }>
-                        <SimpleIconWrapper classes="w-6 fill-xetx" icon={hl.icon} />
+                        <Icon class="size-10 fill-xetx" name={hl.iconName} />
                     </a>
                 </li>
             ) }
@@ -86,7 +81,7 @@
                         hl.name !== "GitHub" &&
                         (<li>
                             <a class="flex justify-start items-center gap-4 underline" href={ hl.url } target="_blank" rel="noopener noreferrer" title={ hl.hyper_title }>
-                                <SimpleIconWrapper classes="w-6 fill-xetx" icon={hl.icon} />
+                                <Icon class="size-8 fill-xetx" name={hl.iconName} />
                                 { hl.display_text }
                             </a>
                         </li>)
@@ -95,14 +90,14 @@
             </div>
         </div>
         <hr class="my-4 rounded border-2 border-priry/30">
-        <div class="text-sm grid grid-cols-3">
+        <div class="text-sm grid grid-cols-3 items-center">
             <div class="flex gap-2 items-center">
                 <Image class="w-6" src={MMLogo} alt="Miguel Magueijo Logo" loading="lazy" decoding="async" />
                 <p>Miguel Magueijo © {currentYear}</p>
             </div>
             <div class="flex justify-center">
                 <a href="https://github.com/miguelmagueijo" target="_blank" rel="noopener noreferrer" title="Github - Miguel Magueijo">
-                    <SimpleIconWrapper classes="w-6 fill-xetx" icon={siGithub} /> 
+                    <Icon class="size-8 fill-xetx" name="ri:github-fill" />
                 </a>
             </div>
             <div class="text-right">
