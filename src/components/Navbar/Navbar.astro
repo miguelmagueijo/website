@@ -1,6 +1,7 @@
 ---
     import PagesLinks from "./PagesLinks.astro";
     import type { TabsIDsKeys } from "./";
+    import { Icon } from "astro-icon/components";
     
     import { Image } from "astro:assets";
     import MMLogo from "../../../public/Logo/MCrown_Classic_Dark.svg";
@@ -11,6 +12,62 @@
 
     const { activeID } = Astro.props as Props;
 ---
+<style>
+    nav {
+        @apply top-0 z-50 border-b-2 py-4;
+        position: sticky;
+        overflow: hidden;
+        /* backdrop-filter: blur(1px); */
+        transition-duration: 300ms;
+        border-color: transparent;
+        width: 100%;
+    }
+
+    nav.compact {
+        @apply bg-baund/95 border-priry/30;
+    }
+
+    #navbar-desktop {
+        width: 750px;
+        margin: 0 auto;
+        transition-duration: 300ms;
+    }
+
+    nav.compact #navbar-desktop {
+        @apply px-4 pt-2;
+    }
+
+    nav.compact #navbar-mobile {
+        @apply pt-1 px-2;
+    }
+
+    .theme-btn {
+        @apply text-lg md:text-xl;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .theme-btn::before {
+        content: '☀️';
+    }
+
+    .theme-btn.active::before {
+        content: '🌒';
+    }
+
+    @keyframes Theme {
+        0%   { transform: scale(1) rotate(360deg); }
+        50%  { transform: scale(0.80); }
+        100% { transform: scale(1) rotate(0deg); }
+    }
+
+    .theme-btn.animation {
+        animation: Theme 300ms linear infinite;
+        transform-origin: center;
+        background-color: transparent;
+    }
+</style>
+
 <nav id="navbar-group">
     <div id="navbar-desktop" class="hidden md:flex justify-between items-center">
         <a class="block w-[50px]" href="/">
@@ -27,7 +84,7 @@
                 <Image src={MMLogo} alt="Miguel Magueijo Logo" loading="eager" />
             </a>
             <div class="flex items-center justify-between">
-                <!--<Icons.HambugerMenu class="menu-btn-mobile stroke-sery duration-300 rounded [&.active]:bg-priry/20 [&.active]:stroke-priry" width="30px" height="30px" />-->
+                <Icon name="mdi:hamburger-menu" class="menu-btn-mobile text-sery duration-300 rounded [&.active]:bg-priry/20 [&.active]:text-priry size-10" />
                 <!-- <div>
                     <span id="themeBtnMobile" class="theme-btn"></span>
                 </div> -->
@@ -82,59 +139,3 @@
         mobileMenuBtn.classList.toggle("active");
     });
 </script>
-
-<style>
-    nav {
-        @apply top-0 z-50 border-b-2 py-4;
-        position: sticky;
-        overflow: hidden;
-        /* backdrop-filter: blur(1px); */
-        transition-duration: 300ms;
-        border-color: transparent;
-        width: 100%;
-    }
-
-    nav.compact {
-        @apply bg-baund/95 border-priry/30;
-    }
-
-    #navbar-desktop {
-        width: 750px;
-        margin: 0 auto;
-        transition-duration: 300ms;
-    }
-
-    nav.compact #navbar-desktop {
-        @apply px-4 pt-2;
-    }
-
-    nav.compact #navbar-mobile {
-        @apply pt-1 px-2;
-    }
-
-    .theme-btn {
-        @apply text-lg md:text-xl;
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    .theme-btn::before {
-        content: '☀️';
-    }
-
-    .theme-btn.active::before {
-        content: '🌒';
-    }
-    
-    @keyframes Theme {
-        0%   { transform: scale(1) rotate(360deg); }
-        50%  { transform: scale(0.80); }
-        100% { transform: scale(1) rotate(0deg); }
-    }
-
-    .theme-btn.animation {
-        animation: Theme 300ms linear infinite;
-        transform-origin: center;
-        background-color: transparent;
-    }
-</style>
