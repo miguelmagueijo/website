@@ -6,13 +6,14 @@
 	import { projects as ProjectsInfos } from "../data/projects";
 	import { SocialsHyperlinks } from "../data/socials";
 	import { version as WebsiteVersion  } from "../../package.json";
-	import { Icon } from 'astro-icon/components'
+	import { Icon } from "astro-icon/components"
 
 	import Image from "astro/components/Image.astro";
 	import MeImage from "../../public/me.png";
 	
-	const techKnowledge = ["Java", "Python", "Javascript", "Typescript", "PHP", "HTML", "CSS", "SQL", "Node.js",
-							"Tailwind CSS", "Git", "Svelte", "Scikit-Learn"];
+	const langsKnowledge = ["Java", "Python", "Javascript", "SQL", "Typescript", "HTML", "CSS",
+							"Tailwind CSS", "Svelte/SvelteKit", "Scikit-Learn", "PHP"];
+	const toolsKnowledge = ["IntelliJ", "Git", "Node.js (npm/pnpm)", "Other JetBrains IDEs", "Linux", "Docker"];
 ---
 
 <Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.Home }>
@@ -130,17 +131,37 @@
 	<section class="my-10">
 		<div class="flex space-x-2 items-center">
 			<Icon name="mdi:remote-desktop" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
-			<h2 class="text-xl font-bold text-priry md:text-2xl">Technologies</h2>
+			<h2 class="text-xl font-bold text-priry md:text-2xl">Programming languages</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
+		<div class="mb-2 text-xs opacity-50">
+            Ordered from most used to least used recently.
+		</div>
 		<div class="flex flex-wrap gap-4">
-			{ techKnowledge.map( (t) =>
+			{ langsKnowledge.map( (t) =>
 				<div class="border-2 flex flex-col justify-center font-medium select-none hover:odd:bg-priry hover:even:bg-sery hover:text-baund duration-300 p-2 text-center rounded odd:border-priry even:border-sery">
 					{ t }
 				</div>
 			) }
 		</div>
 	</section>
+    <section class="my-10">
+        <div class="flex space-x-2 items-center">
+            <Icon name="mdi:tools" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+            <h2 class="text-xl font-bold text-priry md:text-2xl">Tools</h2>
+        </div>
+        <hr class="border-2 border-priry rounded mb-4">
+        <div class="mb-2 text-xs opacity-50">
+            Ordered from most well-known to least known.
+        </div>
+        <div class="flex flex-wrap gap-4">
+			{ toolsKnowledge.map( (t) =>
+                    <div class="border-2 flex flex-col justify-center font-medium select-none hover:odd:bg-priry hover:even:bg-sery hover:text-baund duration-300 p-2 text-center rounded odd:border-priry even:border-sery">
+						{ t }
+                    </div>
+			) }
+        </div>
+    </section>
 
 	<section class="my-10 p-1 border-2 border-priry rounded">
 		<details>
