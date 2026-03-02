@@ -45,7 +45,7 @@ export const jobs: Array<JobInfo> = [
         imgAlt: "IPCB Logo",
         imgTitle: "IPCB",
         jobName: "Visiting Assistant Professor",
-        companyName: "IPCB",
+        companyName: "Instituto Politécnico de Castelo Branco",
         positionName: "Python professor",
         start: "Fev 2025",
         end: ""
