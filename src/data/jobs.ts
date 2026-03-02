@@ -39,5 +39,15 @@ export const jobs: Array<JobInfo> = [
         positionName: "Junior developer",
         start: "Jul 2024",
         end: ""
+    },
+    {
+        imgUrl: "/3rdParty/ipcb_new.svg",
+        imgAlt: "IPCB Logo",
+        imgTitle: "IPCB",
+        jobName: "Visiting Assistant Professor",
+        companyName: "Instituto Politécnico de Castelo Branco",
+        positionName: "Python professor",
+        start: "Fev 2025",
+        end: ""
     }
 ];
