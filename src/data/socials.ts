@@ -14,6 +14,13 @@ export type SocialsHyperlinks = {
 }
 
 export const SocialsHyperlinks: SocialsHyperlinks = {
+    github: {
+        url: "https://github.com/miguelmagueijo",
+        name: "GitHub",
+        display_text: "/miguelmagueijo",
+        hyper_title: "Miguel Magueijo LinkedIn profile",
+        iconName: "ri:github-fill",
+    },
     x: {
         url: "https://x.com/miguelmagueijo",
         name: "X",
@@ -34,12 +41,5 @@ export const SocialsHyperlinks: SocialsHyperlinks = {
         display_text: "Miguel Magueijo",
         hyper_title: "Miguel Magueijo Facebook profile",
         iconName: "ri:facebook-circle-fill",
-    },
-    github: {
-        url: "https://github.com/miguelmagueijo",
-        name: "GitHub",
-        display_text: "/miguelmagueijo",
-        hyper_title: "Miguel Magueijo LinkedIn profile",
-        iconName: "ri:github-fill",
     },
 } as const;

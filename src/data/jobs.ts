@@ -31,6 +31,16 @@ export const jobs: Array<JobInfo> = [
         end: "Jul 2021"
     },
     {
+        imgUrl: "/3rdParty/ipcb_new.svg",
+        imgAlt: "UPCB Logo",
+        imgTitle: "UPCB",
+        jobName: "Visiting Assistant Professor",
+        companyName: "Polytechnic University of Castelo Branco",
+        positionName: "Professor",
+        start: "Fev 2025",
+        end: "Today"
+    },
+    {
         imgUrl: "/3rdParty/digitalis.jpg",
         imgAlt: "Digitalis Logo",
         imgTitle: "Digitalis",
@@ -38,16 +48,6 @@ export const jobs: Array<JobInfo> = [
         companyName: "Digitalis",
         positionName: "Junior developer",
         start: "Jul 2024",
-        end: ""
-    },
-    {
-        imgUrl: "/3rdParty/ipcb_new.svg",
-        imgAlt: "IPCB Logo",
-        imgTitle: "IPCB",
-        jobName: "Visiting Assistant Professor",
-        companyName: "Instituto Politécnico de Castelo Branco",
-        positionName: "Python professor",
-        start: "Fev 2025",
-        end: ""
+        end: "Today"
     }
 ];

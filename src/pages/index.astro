@@ -5,15 +5,14 @@
 	import { jobs as JobsInfos } from "../data/jobs";
 	import { projects as ProjectsInfos } from "../data/projects";
 	import { SocialsHyperlinks } from "../data/socials";
-	import { version as WebsiteVersion  } from "../../package.json";
-	import { Icon } from "astro-icon/components"
+	import { Icon } from "astro-icon/components";
 
 	import Image from "astro/components/Image.astro";
 	import MeImage from "../../public/me.png";
 	
 	const langsKnowledge = ["Java", "Python", "Javascript", "SQL", "Typescript", "HTML", "CSS",
 							"Tailwind CSS", "Svelte/SvelteKit", "Scikit-Learn", "PHP"];
-	const toolsKnowledge = ["IntelliJ", "Git", "Node.js (npm/pnpm)", "Other JetBrains IDEs", "Linux", "Docker"];
+	const toolsKnowledge = ["IntelliJ", "Git", "Claude Code", "Node.js (npm/pnpm)", "Other JetBrains IDEs", "Linux", "Docker"];
 ---
 
 <Layout title="Home | Miguel Magueijo" activeTabID={ TabsIDs.Home }>
@@ -37,30 +36,27 @@
 				Hi 👋<br>I'm <b class="text-priry">Miguel Magueijo</b> from Portugal 🇵🇹
 			</p>
 			<p class="mt-4 md:text-lg">
-				As of today, I work as a Web Developer at Digitalis and as a Visiting Assistant Professor at Instituto Politécnico de Castelo Branco (IPCB).
+				As of today, I work as a Web Developer at Digitalis and as a Visiting Assistant Professor at Polytechnic University of Castelo Branco (UPCB).
 				At Digitalis, I contribute to the development of web applications designed to support and manage higher education institutions.
-				While at IPCB, I lecture students on Python programming for general purpose applications and AI.
+				While at UPCB, I lecture students on Java and Python.
 			</p>
 			<p class="mt-1 md:text-lg">
 				I still manage to program as a hobby, and sometimes I challenge myself to try to develop my own versions of apps with improvements that I think are needed or develop simple apps that come to my mind in random moments.
 			</p>
 			<p class="mt-1 md:text-lg">
-				I also love videogames and fantasy worlds. Being immersed in games and stories is one of the best things ever!
+				I also love videogames and fantasy worlds. Being immersed in games and stories is one of the best things to experience.
 			</p>
 			<hr class="my-4 border-2 rounded opacity-90 dark:opacity-10">
 			<p class="md:text-lg">
 				This website shows a little about me, my education path, work experience and enumerates all projects I developed or helped in.<br>
 				Want to work together or ask me something? <a class="underline" href="#contact-area">Send me a message!</a>
 			</p>
-			<p class="text-xs mt-2 opacity-40">
-				This website is still being worked on! Updates are coming... Current version v{WebsiteVersion}.
-			</p>
 		</div>
 	</section>
 
 	<section class="my-10">
-		<div class="flex space-x-2 items-center">
-			<Icon name="mdi:briefcase-outline" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+		<div class="section-title">
+			<Icon name="mdi:briefcase-outline" class="section-icon" />
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Work experience</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
@@ -80,13 +76,13 @@
 	</section>
 
 	<section class="my-10">
-		<div class="flex space-x-2 items-center">
-			<Icon name="mdi:education-outline" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+		<div class="section-title">
+			<Icon name="mdi:education-outline" class="section-icon" />
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Education</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
 		<ul class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
-			{ StudiesInfos.map( (s) => 
+			{ StudiesInfos.map( (s) =>
 				<li class="grid grid-cols-5 gap-4">
 					<img class="logo-image" src={ s.imgUrl } alt={ s.imgAlt } title={ s.imgTitle } />
 					<div class="text-sm col-span-4">
@@ -101,8 +97,8 @@
 	</section>
 
 	<section class="my-10">
-		<div class="flex space-x-2 items-center">
-			<Icon name="mdi:box-variant-closed" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+		<div class="section-title">
+			<Icon name="mdi:box-variant-closed" class="section-icon" />
 			<h2 class="text-xl font-bold text-priry md:text-2xl">Projects</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
@@ -129,9 +125,9 @@
 	</section>
 
 	<section class="my-10">
-		<div class="flex space-x-2 items-center">
-			<Icon name="mdi:remote-desktop" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
-			<h2 class="text-xl font-bold text-priry md:text-2xl">Programming languages</h2>
+		<div class="section-title">
+			<Icon name="mdi:remote-desktop" class="section-icon" />
+			<h2 class="text-xl font-bold text-priry md:text-2xl">Programming languages & frameworks</h2>
 		</div>
 		<hr class="border-2 border-priry rounded mb-4">
 		<div class="mb-2 text-xs opacity-50">
@@ -146,8 +142,8 @@
 		</div>
 	</section>
     <section class="my-10">
-        <div class="flex space-x-2 items-center">
-            <Icon name="mdi:tools" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+        <div class="section-title">
+            <Icon name="mdi:tools" class="section-icon" />
             <h2 class="text-xl font-bold text-priry md:text-2xl">Tools</h2>
         </div>
         <hr class="border-2 border-priry rounded mb-4">
@@ -168,7 +164,7 @@
 			<summary class="p-2 flex justify-between items-center cursor-pointer">
 				<span class="block text-xl font-bold text-priry md:text-2xl select-none">Others</span>
 				<span class="otherArrow">
-					<Icon name="mdi:chevron-down" class="text-priry w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
+					<Icon name="mdi:chevron-down" class="section-icon" />
 				</span>
 			</summary>
 			<div class="p-2 rounded-b">
@@ -183,19 +179,28 @@
 				</ul>
 				<h3 class="mt-5 font-bold text-lg md:text-xl">Technologies I've been using recently</h3>
 				<ol class="list-decimal list-inside">
-					<li>Scikit-Learn</li>
-					<li>Go</li>
-					<li>Svelte</li>
+					<li>Svelte/SvelteKit</li>
 					<li>Docker</li>
+					<li>Claude Code</li>
 				</ol>
-				<small class="opacity-50"><b>Fun fact</b>: this website is made with Astro & Tailwind</small>
-				<h3 class="mt-5 font-bold text-lg md:text-xl">Open to work and learn new stuff!</h3>
-				<p>
-					If you got an idea just shoot me a message on any of my socials and we can get to work on it!<br>
-					I also have some projects ideas, if you want to co-create something with me just contact me already!<br>
-				</p>
+				<small class="opacity-50"><b>Fun fact</b>: this website is made with Astro & Tailwind and wasn't vibecoded!</small>
 			</div>
 		</details>
+	</section>
+
+	<section>
+		<div class="section-title">
+			<Icon name="mdi:account-group" class="section-icon" />
+			<h2 class="text-xl font-bold text-priry md:text-2xl">Open to work and learn new stuff!</h2>
+		</div>
+		<hr class="border-2 border-priry rounded mb-4">
+		<p class="md:text-lg">
+			If you got an idea and want me in your team, shoot me a message on any of my socials!<br>
+			Or... if you want to help me build my own stuff just contact me already!<br>
+		</p>
+		<p class="mt-2 md:text-lg">
+			I appreciate any feedback, negative or positive are welcome. Thus, if you found a bug, error or an improvement in my projects, contact me so I can learn with you.
+		</p>
 	</section>
 
 	<hr class="my-8 md:my-12 rounded border-2 opacity-90 dark:opacity-10">
@@ -208,7 +213,7 @@
             <p class="text-lg md:text-xl font-semibold">
                 Do you want to ask me something or want to work with me?
                 <br>
-                Hit me with a message on any of my socials! 
+                Hit me with a message on any of my socials!
             </p>
         </div>
         <div>
@@ -229,6 +234,18 @@
 </Layout>
 
 <style>
+	@reference "../styles/global.css";
+
+	.section-title {
+		@apply mb-1 gap-2;
+		display: flex;
+		align-items: center;
+	}
+
+	.section-icon {
+		@apply text-priry size-6 md:size-8;
+	}
+
 	@keyframes show-details {
 		from {
 			opacity: 0;
@@ -251,7 +268,7 @@
 	}
 
 	.logo-image {
-		@apply size-14 md:size-16 bg-white p-1 shadow border border-black dark:border-white border-opacity-10 rounded;
+		@apply size-14 md:size-16 bg-white p-1 shadow border border-black/10 dark:border-white/10 rounded;
 	}
 
 	.project-pill {

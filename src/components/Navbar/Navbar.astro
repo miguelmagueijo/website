@@ -13,6 +13,8 @@
     const { activeID } = Astro.props as Props;
 ---
 <style>
+    @reference "../../styles/global.css";
+
     nav {
         @apply top-0 z-50 border-b-2 py-4;
         position: sticky;
@@ -96,6 +98,13 @@
 
 <script is:inline>
     const navbar = document.getElementById("navbar-group");
+    const mobileMenuBtn = document.querySelector(".menu-btn-mobile");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenuBtn.classList.toggle("active");
+    });
 
     window.onscroll = () => {
         if (window.scrollY > 30) {
@@ -104,38 +113,4 @@
             navbar.classList.remove("compact");
         }
     }
-
-    function changeTheme(event) {
-        document.documentElement.classList.toggle("dark");
-        localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
-
-        event.target.classList.add("animation");
-
-        setTimeout(() => {
-            event.target.classList.toggle("active");
-        }, 150);
-
-        setTimeout(() => {
-            event.target.classList.remove("animation");
-        }, 300);
-    }
-
-    const mobileMenuBtn = document.querySelector(".menu-btn-mobile");
-    const mobileMenu = document.getElementById("mobile-menu");
-    // const themeBtnDesktop = document.getElementById("themeBtn");
-    // const themeBtnMobile = document.getElementById("themeBtnMobile");
-
-    // if (document.documentElement.classList.contains("dark")) {
-    //     themeBtnDesktop.classList.add("active");
-    //     themeBtnMobile.classList.add("active");
-    // }
-
-    // themeBtnDesktop.addEventListener("click", changeTheme);
-    // themeBtnMobile.addEventListener("click", changeTheme);
-
-
-    mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        mobileMenuBtn.classList.toggle("active");
-    });
 </script>
